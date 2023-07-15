@@ -8,7 +8,7 @@ import { Login } from './pages/Login';
 export function App() {
   return (
     <Routes>
-      <Route path='/' element={<Login />} />
+      <Route path="/" element={<Login />} />
       {/* <Route path = '/home' element = {<Home/>}/> */}
     </Routes>
     // test

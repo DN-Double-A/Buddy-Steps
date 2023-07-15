@@ -3,10 +3,10 @@ const db = require('../models/buddyModel');
 const userController = {};
 
 //^ getUsers method to retrieve user info from db
-userController.getUsers = (req, res, next) => {
-  //? Query string pulling the id, username, password, and name from users table on the database with the username from req.params
-  const queryString =
-    'SELECT id, username, password, name FROM users WHERE username = $1';
+userController.getUser = (req, res, next) => {
+
+    //? Query string pulling the id, username, password, and name from users table on the database with the username from req.params 
+    const queryString = 'SELECT id, username, password, name FROM users WHERE username = $1';
 
   //? username intialized to desantitize data from req.params object
   const username = req.params.username;
