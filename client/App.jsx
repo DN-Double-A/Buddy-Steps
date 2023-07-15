@@ -1,16 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './styles/styles.scss';
-import { HeadContainer } from './containers/HeadContainer';
+
+import { Login } from './pages/Login';
 
 export function App() {
   return (
-    <HeadContainer />
-    // <Routes>
-    //   <Route />
-    //   <Route />
-    //   <Route />
-    // </Routes>
+    <Routes>
+      <Route path='/' element={<Login />} />
+    </Routes>
     // test
   );
 }
