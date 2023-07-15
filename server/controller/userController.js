@@ -29,7 +29,7 @@ userController.getUsers = (req, res, next) => {
 
 userController.createUser = (req, res, next) => {
         
-    const queryString = 'INSERT INTO users (id, username, password, name, profilepic) FROM users VALUES ($1, $2, $3, $4)';
+    const queryString = 'INSERT INTO users (username, password, name, profilepic) VALUES ($1, $2, $3, $4)';
     
     const { username, password, name, profilepic } = req.params;
 
