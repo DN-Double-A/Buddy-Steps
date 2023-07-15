@@ -26,6 +26,8 @@ taskController.getData = async function (req, res, next) {
   try {
     const result = await db.query(queryString);
     res.locals.userData = result.rows;
+    console.log(result.rows);
+    return next();
   } catch (error) {
     const newErr = createErr({ error });
     return next(error);
