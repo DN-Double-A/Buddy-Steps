@@ -17,16 +17,19 @@ const createErr = (errInfo) => {
 };
 
 // method to get all the user data.
-taskController.getData = async function (req, res, next) {
-  const queryString = `SELECT users.id AS "userID", users.username, users.name, users.profilepic, tasks.id AS "taskID", tasks.task, tasks.startDate, tasks.endDate FROM UsersTasksJoinTable
-  right JOIN Users
-  ON UsersTasksJoinTable.userId = Users.id
-  right JOIN Tasks
-  ON UsersTasksJoinTable.taskId = Tasks.id`;
+taskController.getTaskData = async function (req, res, next) {
   try {
+    const queryString = {
+      text: `SELECT tasks.id AS "taskID", tasks.task, tasks.startDate, tasks.endDate FROM UsersTasksJoinTable
+      right JOIN Users
+      ON UsersTasksJoinTable.userId = Users.id
+      right JOIN Tasks
+      ON UsersTasksJoinTable.taskId = Tasks.id
+      WHERE users.username = $1;`,
+      values: [req.query.username],
+    };
     const result = await db.query(queryString);
-    res.locals.userData = result.rows;
-    console.log(result.rows);
+    res.locals.taskData = result.rows;
     return next();
   } catch (error) {
     const newErr = createErr({ error });
@@ -34,6 +37,8 @@ taskController.getData = async function (req, res, next) {
   }
 };
 
+//add the task to the task to table
+//link the userid and the task in the task in the table.
 taskController.createData = async function (req, res, next) {};
 
 module.exports = taskController;
