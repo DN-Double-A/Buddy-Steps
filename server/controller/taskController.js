@@ -19,11 +19,13 @@ const createErr = (errInfo) => {
 // method to get all the user data.
 taskController.getTaskData = async function (req, res, next) {
   try {
+    // joining our user's task table id to match the foreign keys with the task table to get that user's specific tasks. Searching for a dynamic value based off the username.
     const queryString = {
-      text: `SELECT tasks.id AS "taskID", tasks.task, tasks.startDate, tasks.endDate FROM UsersTasksJoinTable
-      right JOIN Users
+      text: `SELECT tasks.id AS "taskID", tasks.task, tasks.startDate, tasks.endDate 
+      FROM UsersTasksJoinTable
+      RIGHT JOIN Users
       ON UsersTasksJoinTable.userId = Users.id
-      right JOIN Tasks
+      RIGHT JOIN Tasks
       ON UsersTasksJoinTable.taskId = Tasks.id
       WHERE users.username = $1;`,
       values: [req.query.username],
