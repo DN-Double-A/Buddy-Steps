@@ -69,3 +69,6 @@ typings/
 
 # dist folder should be re-bundled
 dist
+
+# file used to test postgres DB connection
+server/models/model_test.js
