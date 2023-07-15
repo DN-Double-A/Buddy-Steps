@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 // if we need to serve any static files, serve them here:
-app.use(express.static(path.resolve(__dirname, '../client')));
+app.use(express.static(path.resolve(__dirname, '../client/index.html')));
 // insert routes here, please specify specific routes / what they will do:
 //GOES TO USER ROUTER
 app.use('/api/user', userRouter)
