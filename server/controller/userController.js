@@ -38,7 +38,7 @@ userController.createUser = (req, res, next) => {
 
     db.query(queryString, values)
         .then((data) => {
-            res.locals.user = data.rows[0];
+            res.locals.newUser = data.rows[0];
 
             return next();
             
