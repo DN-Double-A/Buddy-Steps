@@ -6,11 +6,11 @@ const router = express.Router();
 router.get('/',
 userController.getUser,
 (req,res) => res.status(200).json(res.locals.user)
-);
+); //? sending back user data to client with 200 status
 
 router.post('/create',
 userController.createUser,
 (req,res) => res.status(200).json(res.locals.newUser)
-);
+); //? sending back new user data to client with 200 status
 
 module.exports = router
