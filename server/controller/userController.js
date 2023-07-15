@@ -4,7 +4,7 @@ const userController = {};
 
 
 //^ getUsers method to retrieve user info from db
-userController.getUsers = (req, res, next) => {
+userController.getUser = (req, res, next) => {
 
     //? Query string pulling the id, username, password, and name from users table on the database with the username from req.params 
     const queryString = 'SELECT id, username, password, name FROM users WHERE username = $1';
