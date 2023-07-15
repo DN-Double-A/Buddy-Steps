@@ -22,8 +22,8 @@ router.post('/',taskController.createData, (req, res) => {
 
 //& Update request to '/api/tasks'
 //& User updates existing tasks
-//& Name information will come in url parameter. Task information will come in UPDATE body
-router.update('/', taskController.updateData, (req, res) => {
+//& Name information will come in url parameter. Task information will come in PATCH body
+router.patch('/', taskController.updateData, (req, res) => {
     //TODO: UPDATE VALUE INSIDE JSON
     return res.status(200).json()
 });
