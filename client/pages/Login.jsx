@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './login.scss'
 
 export function Login() {
   const [password, setPassword] = useState('');
@@ -42,6 +43,7 @@ export function Login() {
         <h3>Sign in Below</h3>
         <label>Username</label>
         <input
+        className = 'allinputfields'
           name="username"
           type="text"
           onChange={(e) => {
@@ -52,6 +54,7 @@ export function Login() {
         <label>Password</label>
         <input
           id="password"
+          className = 'allinputfields'
           name="password"
           type="password"
           onChange={(e) => {
@@ -59,14 +62,14 @@ export function Login() {
           }}
           placeholder="Your Password Here "
         ></input>
-        <button onClick={login}>Login</button>
+        <button id='allbuttons' onClick={login}>Login</button>
       </div>
-      <button id="" className="showbutton" onClick={showPassword}>
+      <button id="allbuttons"  onClick={showPassword}>
         {' '}
         Show password
       </button>
       <br></br>
-      <a id="" href="./createuser">
+      <a id="gobackbutton" href="./createuser">
         Sign Up Here
       </a>
     </div>
