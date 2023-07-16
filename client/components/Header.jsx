@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import ThemeContext from './ThemeContext';
+import UserContext from './UserContext';
 import { NewTask } from './NewTask.jsx';
 
 
 export function Header(props) {
 
-  const { username } = useContext(ThemeContext)
+  const { username } = useContext(UserContext)
   const { setTaskData, setIsNewTaskAdded } = props;
   
   //& boolean state that controls 'taskPopup' pop up

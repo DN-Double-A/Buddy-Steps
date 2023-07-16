@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeContext from './ThemeContext';
+import UserContext from './UserContext';
 
 export function Task(props) {
 //TODO: Add button that updates progress (stretch feature)

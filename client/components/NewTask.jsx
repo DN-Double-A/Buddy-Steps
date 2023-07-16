@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import ThemeContext from './ThemeContext';
+import UserContext from './UserContext';
 
 
 export function NewTask(props) {
 
   //   const tester = 'tester'
-  const { username } = useContext(ThemeContext)
+  const { username } = useContext(UserContext)
   const { setIsNewTaskAdded, taskPopup, closeTaskPopup, setTaskData } = props;
   const emptyForm = { taskName: '', days: '' }
   const [formData, setFormData] = useState(emptyForm)
