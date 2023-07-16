@@ -59,19 +59,20 @@ userController.createUser = (req, res, next) => {
 
 userController.login = (req, res, next) => {
   const { username, password } = req.body;
-
   //how do we search for the username in our database
   const queryString =
     'SELECT username, password FROM users WHERE username = $1';
   db.query(queryString, [username])
     .then((data) => {
-      console.log('data is here');
-      if (data.rows[0].password === req.body.password) {
+      if (data.rows[0] === undefined) {
+        res.locals.key = 'false';
+      } else if (data.rows[0].password === req.body.password) {
         res.locals.key = 'true';
       } else {
         res.locals.key = 'false';
       }
-      next();
+      console.log(res.locals.key);
+      return next();
     })
     .catch((err) => {
       return next({

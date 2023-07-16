@@ -4,8 +4,8 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = 3000;
 
-const userRouter = require('./routes/userRouter')
-const taskRouter = require('./routes/taskRouter')
+const userRouter = require('./routes/userRouter');
+const taskRouter = require('./routes/taskRouter');
 
 // including cookies, urlencoder, and express.json
 app.use(cookieParser());
@@ -16,9 +16,9 @@ app.use(express.urlencoded());
 app.use(express.static(path.resolve(__dirname, '../client/assets')));
 // insert routes here, please specify specific routes / what they will do:
 //GOES TO USER ROUTER
-app.use('/api/user', userRouter)
+app.use('/api/user', userRouter);
 //GOES TO TASK ROUTER
-app.use('/api/task', taskRouter)
+app.use('/api/task', taskRouter);
 // catch all error handler
 app.use('/', (req, res) => {
   res.status(404).send('Not Found');
