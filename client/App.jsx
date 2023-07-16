@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import './styles/styles.scss';
 import UserContext from './components/UserContext';
 import { Home } from './pages/Home'
-// import { Login } from './pages/Login';
+import { Login } from './pages/Login';
+import { CreateUser } from './pages/CreateUser';
 import { useState, useEffect } from 'react';
 
 export function App() {
@@ -14,8 +15,9 @@ export function App() {
   return (
     <UserContext.Provider value={{username, setUserName}}>
       <Routes>
-        {/* <Route path="/" element={<Login />} /> */}
-        <Route path='/home' element={<Home />} name={name} />
+        <Route path="/" element={<Login />} />
+        <Route path='/home' element={<Home />}/>
+        <Route path='/createuser' element={<CreateUser />}/>
       </Routes>
     </UserContext.Provider>
 
