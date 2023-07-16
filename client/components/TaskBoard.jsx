@@ -6,7 +6,7 @@ export function TaskBoard(props) {
 
 
   const { username } = useContext(ThemeContext)
-  const { taskData, setTaskData } = props;
+  const { taskData, setTaskData, isNewTaskAdded, setIsNewTaskAdded } = props;
   
 
 
@@ -21,14 +21,16 @@ export function TaskBoard(props) {
       console.log('length: ',newTaskData.length)
     }
     getTasksData(username)
-  }, [username]);
+    // set boolean to false
+    setIsNewTaskAdded(false)
+  }, [username, isNewTaskAdded]);
 
 
 
   return (
     <div className='task-board'>
       {taskData.map((task, index) => {
-        return <Task task={task.task} startdate = {task.startdate} enddate={task.enddate} key={index}/>
+        return <Task task={task.task} startdate = {task.startdate} enddate={task.enddate} key={index} setTaskData={setTaskData}/>
       })}
     </div>
   );
