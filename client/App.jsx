@@ -14,10 +14,5 @@ export function App() {
       <Route path='/' element={<Login />} />
       {/* <Route path = '/home' element = {<Home/>}/> */}
     </Routes>
-    // test
-    <Routes>
-      {/* <Route path="/" element={<Login />} /> */}
-      <Route path = '/home' element = {<Home/>}/>
-    </Routes>
   );
 }

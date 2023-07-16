@@ -19,7 +19,7 @@ export function Login() {
                 alert('Username or Password does not exist')
             }
             if(data === 'true') {
-                console.log('hey im in')// redirect to homepage along with user data
+                console.log('hey im in')
             }
         } catch (error) {
             console.log(error)
