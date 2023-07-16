@@ -1,17 +1,23 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './styles/styles.scss';
-
-import { Login } from './pages/Login';
-// import {Home} from './pages/Home'
-import { CreateUser } from './pages/CreateUser';
+import UserContext from './components/UserContext';
+import { Home } from './pages/Home'
+// import { Login } from './pages/Login';
+import { useState, useEffect } from 'react';
 
 export function App() {
+
+  //& Using UserContext to have 'username' and 'setUserName' as global variables throughout are app (ITS OP!)
+  const [username, setUserName] = useState('currymonstanacho')
+
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      {/* <Route path = '/home' element = {<Home/>}/> */}
-      <Route path="/createuser" element ={<CreateUser/>}/>
-    </Routes>
+    <UserContext.Provider value={{username, setUserName}}>
+      <Routes>
+        {/* <Route path="/" element={<Login />} /> */}
+        <Route path='/home' element={<Home />} name={name} />
+      </Routes>
+    </UserContext.Provider>
+
   );
 }

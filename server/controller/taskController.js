@@ -7,7 +7,7 @@ const taskController = {};
 // Modular error creator:
 const createErr = (errInfo) => {
   return {
-    log: errInfo,
+    log: err,
     message: {
       err: `taskController error: Incorrect data received.`,
     },
