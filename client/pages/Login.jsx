@@ -12,13 +12,14 @@ export function Login() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: { username, password }
+                body: JSON.stringify({ username : username, password: password })
             })
             const data = await res.json()
-            if (data = 'error') { // 'error' will be sent back in the backend
+            if (data === 'false') { // 'error' will be sent back in the backend
                 alert('Username or Password does not exist')
-            } else {
-                // LINK TO HOMEPAGE with USER DATA
+            }
+            if(data === 'true') {
+                console.log('hey im in')// redirect to homepage along with user data
             }
         } catch (error) {
             console.log(error)
@@ -55,7 +56,7 @@ export function Login() {
                         setPassword(e.target.value)
                     }}
                     placeholder='Your Password Here '></input>
-                <button>Login</button>
+                <button onClick={login}>Login</button>
             </div>
             <button id='' className='showbutton' onClick={showPassword}> Show password</button>
             <br></br>
