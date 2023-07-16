@@ -43,8 +43,9 @@ userController.createUser = (req, res, next) => {
 
   db.query(queryString, values)
     .then((data) => {
+      console.log(data.rows)
       //? Data from query stored on res.locals.newUser to pass back to router
-      res.locals.newUser = data.rows[0];
+      res.locals.newUser = 'created';
 
       return next();
     })

@@ -36,8 +36,8 @@ export function Login() {
     }
   };
   return (
-    <div>
-      <div>
+    <div id = 'createlogin'>
+      <div id = 'logincreate'>
         <h1>Welcome to Step Buddy</h1>
         <h3>Sign in Below</h3>
         <label>Username</label>
@@ -66,7 +66,7 @@ export function Login() {
         Show password
       </button>
       <br></br>
-      <a id="" href="./signup">
+      <a id="" href="./createuser">
         Sign Up Here
       </a>
     </div>
