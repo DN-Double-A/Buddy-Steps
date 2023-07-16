@@ -12,17 +12,8 @@ router.post('/create', userController.createUser, (req, res) =>
   res.status(200).json(res.locals.newUser)
 ); //? sending back new user data to client with 200 status
 
-<<<<<<< HEAD
 router.post('/login', userController.login, (req, res) => {
   res.status(200).json(res.locals.key);
 }); //?
 
 module.exports = router;
-=======
-router.post('/login',
-userController.login,
-(req,res) => res.status(200).json()
-) //? 
-
-module.exports = router
->>>>>>> 8c290d7 (untest)
