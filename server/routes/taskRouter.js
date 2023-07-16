@@ -27,9 +27,7 @@ router.patch('/', taskController.updateTask, (req, res) => {
 
 //& Deletes request to '/api/task'
 //& User deletes existing tasks
-
 router.delete('/', taskController.deleteTask, (req, res) => {
-  //TODO: UPDATE VALUE INSIDE JSON
   return res.status(200).json(res.locals.deleted);
 });
 
