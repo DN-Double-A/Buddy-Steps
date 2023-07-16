@@ -1,8 +1,12 @@
 import React from 'react';
-import { HeaderContainer } from '../containers/HeaderContainer';
+import { Header } from '../components/Header.jsx';
 
-export function Home(){
+
+export function Home(prop){
+
+    //& Pass the nam
+
     return (
-        <HeaderContainer />
+        <Header />
     )
 }
