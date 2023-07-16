@@ -2,14 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import ThemeContext from './ThemeContext';
 import { Task } from './Task.jsx'
 
-export function TaskBoard() {
+export function TaskBoard(props) {
 
 
   const { username } = useContext(ThemeContext)
-  const [taskData, setTaskData] = useState([])
+  const { taskData, setTaskData } = props;
+  
 
 
-  //& Render tasks on start up and re-render them everytime the username changes
+  //& Render tasks on start up and re-render them everytime the username or task data changes
   useEffect(() => {
     // get tasks associated with username
     async function getTasksData(username) {
@@ -17,7 +18,7 @@ export function TaskBoard() {
       const newTaskData = await response.json()
       // console.log(newTaskData)
       setTaskData(newTaskData)
-      console.log(newTaskData.length)
+      console.log('length: ',newTaskData.length)
     }
     getTasksData(username)
   }, [username]);
