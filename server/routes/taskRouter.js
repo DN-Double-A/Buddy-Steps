@@ -14,10 +14,9 @@ router.get('/', taskController.getTaskData, (req, res) => {
 //& Post requests to '/api/tasks/'
 //& User creates new tasks
 //& Name information will come in url parameter. Task information will come in POST body
-// router.post('/', taskController.createData, (req, res) => {
-//   //TODO: UPDATE VALUE INSIDE JSON
-//   return res.status(200).json();
-// });
+router.post('/', taskController.createData, (req, res) => {
+  return res.sendStatus(200);
+});
 
 //& Update request to '/api/tasks'
 //& User updates existing tasks
