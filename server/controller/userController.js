@@ -64,9 +64,9 @@ userController.login = (req, res, next) => {
     'SELECT username, password FROM users WHERE username = $1';
   db.query(queryString, [username])
     .then((data) => {
-      if(data.rows[0] == undefined){
+      if(data.rows[0] === undefined){
         res.locals.key = 'false'
-      }else if (data.rows[0].password == req.body.password){
+      }else if (data.rows[0].password === req.body.password){
         res.locals.key = 'true'
       }else{
         res.locals.key = 'false'
