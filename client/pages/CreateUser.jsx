@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 import { useState } from 'react';
+import './login.scss'
 
 export function CreateUser() {
   const [password, setPassword] = useState('');
@@ -54,6 +55,7 @@ export function CreateUser() {
         <h3>Sign up Below</h3>
         <label>Name</label>
         <input
+        className = 'allinputfields'
           name="name"
           type="text"
           onChange={(e) => {
@@ -63,11 +65,11 @@ export function CreateUser() {
         ></input>
         <div>
         </div>
-        <label>Select a profile picture</label>
-        <Select options = {options} onChange={handleProfileChange}/>
-        <br></br>
-        <label>Username</label>
+        <label >Select a profile picture</label>
+        <Select className = 'allinputfields' options = {options} onChange={handleProfileChange}/>
+        <label >Username</label>
         <input
+        className = 'allinputfields'
           name="username"
           type="text"
           onChange={(e) => {
@@ -78,6 +80,7 @@ export function CreateUser() {
         <label>Password</label>
         <input
           id="password"
+          className = 'allinputfields'
           name="password"
           type="password"
           onChange={(e) => {
@@ -85,14 +88,14 @@ export function CreateUser() {
           }}
           placeholder="Your Password Here "
         ></input>
-        <button onClick={createuser}>Create User</button>
+        <button id ='allbuttons' onClick={createuser}>Create User</button>
       </div>
-      <button id="" className="showbutton" onClick={showPassword}>
+      <button id="allbuttons"  onClick={showPassword}>
         {' '}
         Show password
       </button>
       <br></br>
-      <a id="" href="./">
+      <a id="gobackbutton" href="./">
         Go Back to Login
       </a>
     </div>
