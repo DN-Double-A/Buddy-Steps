@@ -1,12 +1,16 @@
 import React from 'react';
 import { Header } from '../components/Header.jsx';
+import { TaskBoard } from '../components/TaskBoard.jsx';
 
 
-export function Home(prop){
+export function Home(prop) {
 
     //& Pass the nam
 
     return (
-        <Header />
+        <div>
+            <Header />
+            <TaskBoard />
+        </div>
     )
 }

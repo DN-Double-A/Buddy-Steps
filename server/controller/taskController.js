@@ -8,7 +8,7 @@ const taskController = {};
 const createErr = (errInfo) => {
   const { method, type, err } = errInfo;
   return {
-    log: error,
+    log: err,
     message: {
       err: `taskController error: Incorrect data received.`,
     },

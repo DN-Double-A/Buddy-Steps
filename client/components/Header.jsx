@@ -8,5 +8,5 @@ export function Header() {
   const { username } = useContext(ThemeContext)
 
   return (
-  <div>{username}</div>
+  <div>{username} Tasks</div>
   );}
