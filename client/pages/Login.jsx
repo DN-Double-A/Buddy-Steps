@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './login.scss'
-import UserContext from '../components/UserContext';
+import '../styles/login.scss';
+import { UserContext } from '../contexts/Contexts';
 
 export function Login() {
   const [password, setPassword] = useState('');
@@ -26,10 +26,10 @@ export function Login() {
         alert('Username or Password does not exist');
       }
       if (data === 'true') {
-        navigate('/home')
+        navigate('/home');
         //TODO: set username here
-        console.log('username: ', username)
-        setGlobalUsername(username)
+        console.log('username: ', username);
+        setGlobalUsername(username);
         console.log('hey im in');
       }
     } catch (error) {
@@ -46,15 +46,17 @@ export function Login() {
     }
   };
   return (
-    <div id = 'createlogin'>
-      <div id = 'logincreate'>
+    <div id="createlogin">
+      <div id="logincreate">
         <h1>Welcome to Step Buddy</h1>
         <hr />
         <h2>Sign in Below</h2>
-        <div className='input-container'>
-          <label><h3 className='name-h3' >Username</h3></label>
+        <div className="input-container">
+          <label>
+            <h3 className="name-h3">Username</h3>
+          </label>
           <input
-          className = 'allinputfields'
+            className="allinputfields"
             name="username"
             type="text"
             onChange={(e) => {
@@ -63,11 +65,13 @@ export function Login() {
             placeholder="Your User Name Here "
           ></input>
         </div>
-        <div className='input-container'>
-          <label><h3>Password</h3></label>
+        <div className="input-container">
+          <label>
+            <h3>Password</h3>
+          </label>
           <input
             id="password"
-            className = 'allinputfields'
+            className="allinputfields"
             name="password"
             type="password"
             onChange={(e) => {
@@ -76,15 +80,21 @@ export function Login() {
             placeholder="Your Password Here "
           ></input>
         </div>
-      <button id="allbuttons" onClick={showPassword}>
-        {' '}
-        Show password
-      </button>
-      <hr />
-        <button id='allbuttons' onClick={login}>Login</button>
+        <button id="allbuttons" onClick={showPassword}>
+          {' '}
+          Show password
+        </button>
+        <hr />
+        <button id="allbuttons" onClick={login}>
+          Login
+        </button>
       </div>
-      <div id = 'userdirect'><h3>New to Step Buddy?</h3><a id="gobackbutton" href="./createuser"><h3>Sign Up Here</h3>
-      </a></div>
+      <div id="userdirect">
+        <h3>New to Step Buddy?</h3>
+        <a id="gobackbutton" href="./createuser">
+          <h3>Sign Up Here</h3>
+        </a>
+      </div>
     </div>
   );
 }

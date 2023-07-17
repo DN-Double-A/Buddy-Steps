@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import UserContext from './UserContext';
+import { UserContext } from '../contexts/Contexts';
 
 export function NewTask(props) {
   //   const tester = 'tester'
-  const { globalUsername } = useContext(UserContext)
+  const { globalUsername } = useContext(UserContext);
   const { setAreTasksChanged, taskPopup, closeTaskPopup, setTaskData } = props;
-  const emptyForm = { taskName: '', days: '' }
-  const [formData, setFormData] = useState(emptyForm)
+  const emptyForm = { taskName: '', days: '' };
+  const [formData, setFormData] = useState(emptyForm);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -22,8 +22,8 @@ export function NewTask(props) {
     // Get current date
     const currDate = new Date();
     // Calculate end date
-    const endDate = new Date()
-    endDate.setDate(currDate.getDate() + Number(formData.days))
+    const endDate = new Date();
+    endDate.setDate(currDate.getDate() + Number(formData.days));
     // console.log('data to send: ', formData.taskName, currDate, endDate)
 
     //~ Create new task by sending POST req with data
@@ -43,7 +43,7 @@ export function NewTask(props) {
         });
 
         //~ Set the areTasksChanged boolean to true to notify the TaskBoard to refresh
-        setAreTasksChanged(true)
+        setAreTasksChanged(true);
 
         //~ Reset Form
         setFormData(emptyForm);
@@ -54,7 +54,7 @@ export function NewTask(props) {
         console.log(err);
       }
     }
-    createNewTask()
+    createNewTask();
   }
 
   return (
@@ -65,16 +65,28 @@ export function NewTask(props) {
             <h2>Create a New Task</h2>
             <hr />
 
-            <form onSubmit={handleSubmit} className='form'>
+            <form onSubmit={handleSubmit} className="form">
               <div>
-                <label htmlFor='taskName'>Task Name:</label>
-                <input type='text' id='taskName' name='taskName' value={formData.taskName} onChange={handleChange}></input>
+                <label htmlFor="taskName">Task Name:</label>
+                <input
+                  type="text"
+                  id="taskName"
+                  name="taskName"
+                  value={formData.taskName}
+                  onChange={handleChange}
+                ></input>
               </div>
               <div>
-                <label htmlFor='days'>Number of Days to Complete Task:</label>
-                <input type='text' id='days' name='days' value={formData.days} onChange={handleChange}></input>
+                <label htmlFor="days">Number of Days to Complete Task:</label>
+                <input
+                  type="text"
+                  id="days"
+                  name="days"
+                  value={formData.days}
+                  onChange={handleChange}
+                ></input>
               </div>
-              <button className='new-task-submit-button' >Submit</button>
+              <button className="new-task-submit-button">Submit</button>
             </form>
             <button className="new-task-close-button" onClick={closeTaskPopup}>
               x

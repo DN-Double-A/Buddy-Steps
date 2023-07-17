@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { SideContext } from '../contexts/SideContext';
+import { SideContext } from '../contexts/Contexts';
 
 export function SideComponent() {
   const { isSideBarShowing, setIsSideBarShowing } = useContext(SideContext);
