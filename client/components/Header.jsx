@@ -19,7 +19,6 @@ export function Header(props) {
       try {
         const res = await fetch(`/api/user/?username=${globalUsername}`)
         const data = await res.json()
-        console.log(data)
         setProfilePic(data.profilepic)
       }
       catch(err){

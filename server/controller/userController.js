@@ -15,7 +15,6 @@ userController.getUser = (req, res, next) => {
     .then((data) => {
       //? Data from query stored on res.locals.user to pass back to router
       res.locals.user = data.rows[0];
-      console.log('data.rows[0].id: ', data.rows[0].id);
 
       return next();
     })
