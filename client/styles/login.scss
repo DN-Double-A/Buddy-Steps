@@ -25,43 +25,43 @@
     letter-spacing: 0.05em;
     font-weight: 550;
   }
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
   }
   a {
     margin-right: 22px;
   }
-  animation: loadin 2s 
+  animation: loadin 2s;
 }
 
-
-@keyframes loadin{
-  from{
+@keyframes loadin {
+  from {
     opacity: 0;
     transform: translateX(-10px);
   }
-  to{
-opacity:1;
-transform:translateX(0)
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 h3 {
   // margin-top: 20px;
 }
-#userdirect{
+#userdirect {
   display: flex;
   flex-direction: row;
   align-items: center;
-a h3 {
-  // text-align: center;
-  // text-decoration: underline;
-  width: 100%;
-  // padding: 8px;
-  color: rgba(127, 212, 255, 0.733);
-  // border: solid 3px rgba(127, 212, 255, 0.733);
-  // border-radius: 32px;
-}
+  a h3 {
+    // text-align: center;
+    // text-decoration: underline;
+    width: 100%;
+    // padding: 8px;
+    color: rgba(127, 212, 255, 0.733);
+    // border: solid 3px rgba(127, 212, 255, 0.733);
+    // border-radius: 32px;
+  }
 }
 #logincreate {
   width: 100%;
@@ -107,12 +107,15 @@ a h3 {
 #allbuttons:hover {
   cursor: pointer;
   transform: translate(1px, 1px);
-  color:var(--clr-light)
+  color: white;
+}
+.allinputfields::placeholder {
+  text-align: center;
 }
 
 #gobackbutton {
   text-align: center;
-  margin-left:10px;
+  margin-left: 10px;
   text-decoration: underline;
   color: rgba(127, 212, 255, 0.733);
   font-weight: bolder;

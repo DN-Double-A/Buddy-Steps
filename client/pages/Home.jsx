@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Header } from '../components/Header.jsx';
-import { TaskBoard } from '../components/TaskBoard.jsx';
+import { Header } from '../containers/HeaderContainer.jsx';
+import { TaskBoard } from '../containers/TaskBoardContainer.jsx';
 import { SideContainer } from '../containers/SideContainer.jsx';
-import { SideContext } from '../contexts/SideContext.jsx';
+import { SideContext } from '../contexts/Contexts.jsx';
 
 export function Home(props) {
   //& Passing state variables to Header and Taskboard
@@ -10,31 +10,35 @@ export function Home(props) {
   const [taskData, setTaskData] = useState([]);
 
   // Creating boolean to conditionally render the side bar.
-  const [isSideBarShowing, setIsSideBarShowing] = useState(false);
+  const [isSideBarShowing, setIsSideBarShowing] = useState(true);
 
   // Creating boolean to notify when the TaskBoard should be refreshed
   const [areTasksChanged, setAreTasksChanged] = useState(false);
 
   return (
-    <div>
+    <>
       <Header
         taskData={taskData}
         setTaskData={setTaskData}
         setAreTasksChanged={setAreTasksChanged}
       />
-      <TaskBoard
-        taskData={taskData}
-        setTaskData={setTaskData}
-        setAreTasksChanged={setAreTasksChanged}
-        areTasksChanged={areTasksChanged}
-      />
-      {isSideBarShowing ? (
-        <SideContext.Provider value={{ isSideBarShowing, setIsSideBarShowing }}>
-          <SideContainer />
-        </SideContext.Provider>
-      ) : (
-        ''
-      )}
-    </div>
+      <div className="sidebar-taskboard-container">
+        <TaskBoard
+          taskData={taskData}
+          setTaskData={setTaskData}
+          setAreTasksChanged={setAreTasksChanged}
+          areTasksChanged={areTasksChanged}
+        />
+        {isSideBarShowing ? (
+          <SideContext.Provider
+            value={{ isSideBarShowing, setIsSideBarShowing }}
+          >
+            <SideContainer />
+          </SideContext.Provider>
+        ) : (
+          ''
+        )}
+      </div>
+    </>
   );
 }
