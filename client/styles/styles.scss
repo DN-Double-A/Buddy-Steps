@@ -1,8 +1,11 @@
 #root {
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
+  height: 100%;
   margin: 0;
   background: linear-gradient(
     to bottom right,
@@ -22,28 +25,43 @@ body {
     rgb(79, 95, 131),
     rgb(45, 52, 71)
   );
-  width: 100%;
-  height: 72px;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 0px;
   text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.3);
+
+  .profile-pic {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: solid 3px;
+  }
+  .profile-pic:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.1s ease-out;
+  }
   h3,
   h1 {
     letter-spacing: 0.075em;
     font-weight: 300;
   }
   .add-task-button {
-    width: 36px;
-    height: 36px;
-    filter: invert(0.2) sepia(100%) hue-rotate(150deg) brightness(300%)
+    width: 80px;
+    height: 80px;
+    filter: invert(0.1) sepia(100%) hue-rotate(180deg) brightness(300%)
       saturate(420%) opacity(80%);
+    border-radius: 22px;
+    border: solid 3px;
+    transition: 0.5s ease-out;
   }
   .add-task-button:hover {
     cursor: pointer;
-    transform: scale(1.3) rotate(90deg);
-    transition: 0.3s ease-out;
+    transform: scale(1.1) rotate(180deg);
+    transition: 0.5s ease-out;
   }
 }
 
@@ -55,16 +73,31 @@ body {
   align-items: center;
 }
 
+.sidebar-taskboard-container {
+  height: 100%;
+  display: flex;
+}
+
+.main-side-container {
+  display: flex;
+  min-width: 128px;
+  height: 100%;
+  flex-direction: column;
+  background-color: lightcyan;
+}
+
+.task-board {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 hr {
   width: 80%;
 }
 
-.task-board {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 40px;
-}
 
 .task {
   border: 1px solid;

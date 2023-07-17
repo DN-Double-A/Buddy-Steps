@@ -1,6 +1,6 @@
 import React from 'react';
 import { SideComponent } from '../components/SideComponent';
-import '../styles/sidebarStyles.scss';
+import '../styles/styles.scss';
 
 export function SideContainer() {
   return (
