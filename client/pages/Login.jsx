@@ -1,14 +1,15 @@
 import React from 'react';
 import { useState, useContext } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import './login.scss'
 import UserContext from '../components/UserContext';
 
 export function Login() {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-
   const { setGlobalUsername } = useContext(UserContext);
+
+  const navigate = useNavigate();
 
   const login = async () => {
     try {
@@ -25,11 +26,10 @@ export function Login() {
         alert('Username or Password does not exist');
       }
       if (data === 'true') {
+        navigate('/home')
         //TODO: set username here
-        // console.log('username: ', username)
+        console.log('username: ', username)
         setGlobalUsername(username)
-
-        window.location.href = '/home'
         console.log('hey im in');
       }
     } catch (error) {
