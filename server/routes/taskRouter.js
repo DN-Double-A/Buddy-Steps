@@ -27,10 +27,8 @@ router.patch('/', taskController.updateTask, (req, res) => {
 
 //& Deletes request to '/api/task'
 //& User deletes existing tasks
-//TODO: Name information will come in url parameter. Task information will come in DELETE body????
-// router.delete('/', taskController.deleteData, (req, res) => {
-//   //TODO: UPDATE VALUE INSIDE JSON
-//   return res.status(200).json();
-// });
+router.delete('/', taskController.deleteTask, (req, res) => {
+  return res.status(200).json(res.locals.deleted);
+});
 
 module.exports = router;

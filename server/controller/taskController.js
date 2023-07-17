@@ -142,7 +142,28 @@ taskController.updateTask = async function (req, res, next) {
 
     // sending back updated task id to confirm it was updated.
     res.locals.updatedTaskId = updatedId.rows[0].id;
-    console.log('updatedId: ', updatedId);
+    return next();
+  } catch (error) {
+    const newErr = createErr(error);
+    return next(newErr);
+  }
+};
+
+taskController.deleteTask = async function (req, res, next) {
+  try {
+    // grabbing the taskId from the query parameter
+    const currentTaskId = req.query.taskId;
+
+    // query to delete the task where the task id matches
+    const deleteQuery = `
+    DELETE FROM tasks
+    WHERE id = $1
+    RETURNING id;
+    `;
+
+    // assinging the deleted id to deleted to confirm the id was deleted.
+    const deleted = await db.query(deleteQuery, [currentTaskId]);
+    res.locals.deleted = deleted.rows[0].id;
     return next();
   } catch (error) {
     const newErr = createErr(error);
