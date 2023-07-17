@@ -34,7 +34,7 @@ module.exports = {
         target: 'http://localhost:3000/',
         secure: false,
       },
-      '/assets': {
+      '/Assets': {
         target: 'http://localhost:3000/',
         secure: false,
       },
@@ -63,6 +63,10 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg|ico)$/,

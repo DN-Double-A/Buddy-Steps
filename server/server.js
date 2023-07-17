@@ -4,14 +4,26 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = 3000;
 
+const userRouter = require('./routes/userRouter');
+const taskRouter = require('./routes/taskRouter');
+const progressRouter = require('./routes/progressRouter');
+
 // including cookies, urlencoder, and express.json
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded());
 
 // if we need to serve any static files, serve them here:
-
+app.use('/Assets',express.static(path.resolve(__dirname, '../client/assets')));
 // insert routes here, please specify specific routes / what they will do:
+//GOES TO USER ROUTER
+app.use('/api/user', userRouter);
+
+//GOES TO TASK ROUTER
+app.use('/api/task', taskRouter);
+
+//GOES TO PROGRESS ROUTER
+app.use('/api/progress', progressRouter);
 
 // catch all error handler
 app.use('/', (req, res) => {
