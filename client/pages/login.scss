@@ -1,4 +1,9 @@
+#root {
+  height: 100vh;
+}
+
 #createlogin {
+  min-width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,11 +25,15 @@
     letter-spacing: 0.05em;
     font-weight: 550;
   }
+  h1, h2 {
+    text-align: center;
+  }
   a {
     margin-right: 22px;
   }
   animation: loadin 2s 
 }
+
 
 @keyframes loadin{
   from{
@@ -59,8 +68,8 @@ a h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  label, h3 {
-    margin-bottom: 2px;
+  h3 {
+    margin-bottom: 4px;
   }
   hr {
     // margin: 24px auto 20px;
@@ -68,16 +77,24 @@ a h3 {
   }
 }
 
+.input-container {
+  width: 80%;
+}
 
 .allinputfields {
   border-radius: 6px;
   border: none;
-  width: 80%;
+  width: 100%;
   padding: 8px;
   margin-bottom: 4px;
   background-color: rgb(66, 73, 90);
   color: rgba(246, 247, 249, 0.8);
 }
+
+.allinputfields::placeholder {
+  text-align: center;
+}
+
 #allbuttons {
   width: 40%;
   margin-top: 5px;
@@ -92,9 +109,6 @@ a h3 {
   transform: translate(1px, 1px);
   color:var(--clr-light)
 }
-.allinputfields::placeholder {
-  text-align: center;
-}
 
 #gobackbutton {
   text-align: center;
@@ -102,8 +116,4 @@ a h3 {
   text-decoration: underline;
   color: rgba(127, 212, 255, 0.733);
   font-weight: bolder;
-}
-label {
-  align-self: flex-start;
-  margin-left: 40px;
 }

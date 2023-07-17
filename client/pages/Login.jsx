@@ -44,27 +44,31 @@ export function Login() {
         <h1>Welcome to Step Buddy</h1>
         <hr />
         <h2>Sign in Below</h2>
-        <label><h3>Username</h3></label>
-        <input
-        className = 'allinputfields'
-          name="username"
-          type="text"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          placeholder="Your User Name Here "
-        ></input>
-        <label><h3>Password</h3></label>
-        <input
-          id="password"
+        <div className='input-container'>
+          <label><h3 className='name-h3' >Username</h3></label>
+          <input
           className = 'allinputfields'
-          name="password"
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          placeholder="Your Password Here "
-        ></input>
+            name="username"
+            type="text"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            placeholder="Your User Name Here "
+          ></input>
+        </div>
+        <div className='input-container'>
+          <label><h3>Password</h3></label>
+          <input
+            id="password"
+            className = 'allinputfields'
+            name="password"
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Your Password Here "
+          ></input>
+        </div>
       <button id="allbuttons" className='btn2' onClick={showPassword}>
         {' '}
         Show password
