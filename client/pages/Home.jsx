@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Header } from '../components/Header.jsx';
-import { TaskBoard } from '../components/TaskBoard.jsx';
+import { Header } from '../containers/HeaderContainer.jsx';
+import { TaskBoard } from '../containers/TaskBoardContainer.jsx';
 import { SideContainer } from '../containers/SideContainer.jsx';
-import { SideContext } from '../contexts/SideContext.jsx';
+import { SideContext } from '../contexts/Contexts.jsx';
 
 export function Home(props) {
   //& Passing state variables to Header and Taskboard
