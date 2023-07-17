@@ -8,9 +8,9 @@ export function Home(props) {
   //& Passing state variables to Header and Taskboard
   //& Both componenets need state variable hence why I am initializing them in this component
   const [taskData, setTaskData] = useState([]);
+
+  // Creating boolean to conditionally render the side bar.
   const [isSideBarShowing, setIsSideBarShowing] = useState(false);
-  // Creating boolean to notify when the TaskBoard should be refreshed
-  const [isNewTaskAdded, setIsNewTaskAdded] = useState(false);
 
   // Creating boolean to notify when the TaskBoard should be refreshed
   const [areTasksChanged, setAreTasksChanged] = useState(false);
