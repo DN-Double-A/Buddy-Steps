@@ -70,9 +70,8 @@ export function Login() {
       <hr />
         <button id='allbuttons' className='btn1' onClick={login}>Login</button>
       </div>
-      <a id="gobackbutton" href="./createuser"><h3>Sign Up Here</h3>
-        
-      </a>
+      <div id = 'userdirect'><h3>New to Step Buddy?</h3><a id="gobackbutton" href="./createuser"><h3>Sign Up Here</h3>
+      </a></div>
     </div>
   );
 }
