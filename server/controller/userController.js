@@ -6,7 +6,7 @@ const userController = {};
 userController.getUser = (req, res, next) => {
   //? Query string pulling the id, username, password, and name from users table on the database with the username from req.query
   const queryString =
-    'SELECT id, username, password, name FROM users WHERE username = $1';
+    'SELECT id, username,password, profilepic, name FROM users WHERE username = $1';
 
   //? username intialized to desantitize data from req.query object
   const username = req.query.username;
@@ -15,7 +15,6 @@ userController.getUser = (req, res, next) => {
     .then((data) => {
       //? Data from query stored on res.locals.user to pass back to router
       res.locals.user = data.rows[0];
-      console.log('data.rows[0].id: ', data.rows[0].id);
 
       return next();
     })
