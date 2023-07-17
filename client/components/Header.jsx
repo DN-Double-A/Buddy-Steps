@@ -6,7 +6,7 @@ import { NewTask } from './NewTask.jsx';
 export function Header(props) {
 
   const { username } = useContext(UserContext)
-  const { setTaskData, setIsNewTaskAdded } = props;
+  const { setTaskData, setAreTasksChanged } = props;
   
   //& boolean state that controls 'taskPopup' pop up
   const [taskPopup, setTaskPopup] = useState(false)
@@ -24,7 +24,7 @@ export function Header(props) {
     <div className='header'>
       <div>{username} Tasks</div>
       <button className='add-task-button' onClick={openTaskPopup}>Add Task</button>
-      <NewTask setTaskData={setTaskData} taskPopup={taskPopup} closeTaskPopup={closeTaskPopup} setIsNewTaskAdded={setIsNewTaskAdded}/>
+      <NewTask setTaskData={setTaskData} taskPopup={taskPopup} closeTaskPopup={closeTaskPopup} setAreTasksChanged={setAreTasksChanged}/>
     </div>
   );
 }
