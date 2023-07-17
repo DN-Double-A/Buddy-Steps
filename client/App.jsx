@@ -18,7 +18,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path ='/createuser' element = {<CreateUser/>}/>
-        <Route path='/home' element={<Home />} name={name} />
+        <Route path='/home' element={<Home />} />
       </Routes>
     </UserContext.Provider>
 
