@@ -1,7 +1,11 @@
 .main-side-container {
   display: flex;
   height: 100%;
+  width: 15vw;
   flex-direction: column;
   position: absolute;
   background-color: lightcyan;
+}
+.sidebar-taskboard-container {
+  display: flex;
 }
