@@ -11,10 +11,10 @@ import { useState, useEffect } from 'react';
 export function App() {
 
   //& Using UserContext to have 'username' and 'setUserName' as global variables throughout are app (ITS OP!)
-  const [username, setUserName] = useState('currymonstanacho')
+  const [globalUsername, setGlobalUsername] = useState('currymonstanacho')
 
   return (
-    <UserContext.Provider value={{username, setUserName}}>
+    <UserContext.Provider value={{globalUsername, setGlobalUsername}}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path ='/createuser' element = {<CreateUser/>}/>

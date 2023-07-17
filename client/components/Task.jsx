@@ -1,9 +1,8 @@
 import React from 'react';
-import UserContext from './UserContext';
 
 export function Task(props) {
 
-  const { task, startdate, enddate, openEditPopup, index } = props;
+  const { task, startdate, enddate, openEditPopup, index, deleteTask } = props;
 
 
   return (
@@ -13,7 +12,7 @@ export function Task(props) {
       <div>enddate: {enddate}</div>
       <progress className="progress-bar" value="50" max="100" />
       <button className='progress-bar-edit-button' onClick={() => openEditPopup(index)} index={index} >Edit</button>
-      <button className='progress-bar-delete-button' >X</button>
+      <button className='progress-bar-delete-button' onClick={()=>deleteTask(index)} >X</button>
     </div>
   );
 }

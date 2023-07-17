@@ -3,7 +3,7 @@ import UserContext from './UserContext';
 
 export function NewTask(props) {
   //   const tester = 'tester'
-  const { username } = useContext(UserContext)
+  const { globalUsername } = useContext(UserContext)
   const { setAreTasksChanged, taskPopup, closeTaskPopup, setTaskData } = props;
   const emptyForm = { taskName: '', days: '' }
   const [formData, setFormData] = useState(emptyForm)
@@ -30,7 +30,7 @@ export function NewTask(props) {
     async function createNewTask() {
       try {
         //TODO: check if fields are empty and return error
-        const response = await fetch(`/api/task/?username=${username}`, {
+        const response = await fetch(`/api/task/?username=${globalUsername}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
