@@ -89,7 +89,8 @@ hr {
   justify-self: flex-start;
 }
 
-.new-task-popup {
+.new-task-popup,
+.edit-task-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -162,6 +163,20 @@ hr {
   }
 }
 
+.edit-task-popup-inner {
+  width: 40%;
+  position: relative;
+  padding: 36px;
+  background-color: rgb(44, 48, 59);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+  align-items: center;
+  text-align: center;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
 .task-form {
   width: 100%;
   display: flex;
@@ -176,7 +191,8 @@ hr {
   }
 }
 
-.new-task-close-button {
+.new-task-close-button,
+.edit-task-close-button {
   position: absolute;
   height: 24px;
   width: 24px;
@@ -185,4 +201,36 @@ hr {
   border-radius: 8px;
   border: none;
   background-color: rgb(0, 168, 162);
+}
+
+.progress-bar {
+  /* width of the progress bar */
+  width: 80%;
+  height: 20px;
+  /* default color of the progress bar */
+  // background-color: #f3f3f3;
+}
+
+// .progress-bar-delete-button {
+//   position: relative;
+//   top: 0;
+//   right: 0;
+// }
+
+// .progress-bar-edit-button {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+// }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.edit-task-popup-inner input {
+  width: 200px;  
+
 }
