@@ -48,7 +48,7 @@ export function Login() {
   return (
     <div id="createlogin">
       <div id="logincreate">
-        <h1>Welcome to Step Buddy</h1>
+        <h1>Welcome to Buddy Step</h1>
         <hr />
         <h2>Sign in Below</h2>
         <div className="input-container">
@@ -90,7 +90,7 @@ export function Login() {
         </button>
       </div>
       <div id="userdirect">
-        <h3>New to Step Buddy?</h3>
+        <h3>New to Buddy Step?</h3>
         <a id="gobackbutton" href="./createuser">
           <h3>Sign Up Here</h3>
         </a>
