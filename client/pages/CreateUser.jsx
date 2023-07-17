@@ -51,9 +51,9 @@ export function CreateUser() {
   return (
     <div id = 'createlogin'>
       <div id = 'logincreate'>
-        <h1>Registration</h1>
-        <h3>Sign up Below</h3>
-        <label>Name</label>
+        <h1>Create an Account!</h1>
+        <hr />
+        <label><h3>Name</h3></label>
         <input
         className = 'allinputfields'
           name="name"
@@ -65,9 +65,9 @@ export function CreateUser() {
         ></input>
         <div>
         </div>
-        <label >Select a profile picture</label>
+        <label><h3>Select a profile picture</h3></label>
         <Select className = 'allinputfields' options = {options} onChange={handleProfileChange}/>
-        <label >Username</label>
+        <label><h3>Username</h3></label>
         <input
         className = 'allinputfields'
           name="username"
@@ -77,7 +77,7 @@ export function CreateUser() {
           }}
           placeholder="Your User Name Here "
         ></input>
-        <label>Password</label>
+        <label><h3>Password</h3></label>
         <input
           id="password"
           className = 'allinputfields'
@@ -88,15 +88,17 @@ export function CreateUser() {
           }}
           placeholder="Your Password Here "
         ></input>
-        <button id ='allbuttons' onClick={createuser}>Create User</button>
-      </div>
       <button id="allbuttons"  onClick={showPassword}>
         {' '}
         Show password
       </button>
+      <hr />
+        <button id ='allbuttons' onClick={createuser}>Create User</button>
+      </div>
       <br></br>
-      <a id="gobackbutton" href="./">
+      <a id="gobackbutton" href="./"><h3>
         Go Back to Login
+      </h3>
       </a>
     </div>
   );
