@@ -1,5 +1,4 @@
 import React from 'react';
-import UserContext from './UserContext';
 
 export function Task(props) {
 

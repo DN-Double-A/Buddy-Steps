@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
-import UserContext from './UserContext';
+import React, { useState, useEffect } from 'react';
+import DatePicker from "react-datepicker";
 
 export function EditTask(props) {
   const { editPopup, closeEditPopup, taskIndex, setTaskIndex, taskData, setAreTasksChanged } = props;
@@ -77,7 +77,12 @@ export function EditTask(props) {
                 </div>
                 <div>
                   <label htmlFor='updatedEndTime'>End Date:</label>
-                  <input type='text' id='text' name='updatedEndTime' value={formData.updatedEndTime} onChange={handleChange}></input>
+                  {/* <input type='text' id='text' name='updatedEndTime' value={formData.updatedEndTime} onChange={handleChange}></input> */}
+                  <DatePicker selected={new Date(formData.updatedEndTime)} onChange={(date)=>{
+                    setFormData((prevForm)=>{
+                      return {...prevForm, updatedEndTime:date}
+                    })
+                  }} />
                 </div>
                 <button className='edit-task-submit-button' >Submit</button>
               </form>

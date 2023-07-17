@@ -6,7 +6,7 @@ import { EditTask } from './EditTask.jsx';
 export function TaskBoard(props) {
 
 
-  const { username } = useContext(UserContext)
+  const { globalUsername } = useContext(UserContext)
   const { taskData, setTaskData, areTasksChanged, setAreTasksChanged } = props;
 
   const [editPopup, setEditPopup] = useState(false)
@@ -17,17 +17,18 @@ export function TaskBoard(props) {
   //& Render tasks on start up and re-render them everytime the username or task data changes
   useEffect(() => {
     // get tasks associated with username
-    async function getTasksData(username) {
-      const response = await fetch(`/api/task/?username=${username}`)
+    async function getTasksData(globalUsername) {
+      const response = await fetch(`/api/task/?username=${globalUsername}`)
       const newTaskData = await response.json()
       // console.log(newTaskData)
       setTaskData(newTaskData)
       console.log('length: ', newTaskData.length)
     }
-    getTasksData(username)
+    console.log('printing global username in taskboard: ', globalUsername)
+    getTasksData(globalUsername)
     // set boolean to false
     setAreTasksChanged(false)
-  }, [username, areTasksChanged]);
+  }, [globalUsername, areTasksChanged]);
 
   //& When 'Add Task' button is clicked, trigger 'openTaskPopup' which changes the state of 'taskPopup' and causes the 'NewTask' component to appear
   function openEditPopup(index) {

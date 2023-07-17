@@ -1,10 +1,14 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
 import './login.scss'
+import UserContext from '../components/UserContext';
 
 export function Login() {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+
+  const { setGlobalUsername } = useContext(UserContext);
 
   const login = async () => {
     try {
@@ -22,6 +26,9 @@ export function Login() {
       }
       if (data === 'true') {
         //TODO: set username here
+        // console.log('username: ', username)
+        setGlobalUsername(username)
+
         window.location.href = '/home'
         console.log('hey im in');
       }
