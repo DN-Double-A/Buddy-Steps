@@ -40,8 +40,9 @@ export function Login() {
     <div id = 'createlogin'>
       <div id = 'logincreate'>
         <h1>Welcome to Step Buddy</h1>
-        <h3>Sign in Below</h3>
-        <label>Username</label>
+        <hr />
+        <h2>Sign in Below</h2>
+        <label><h3>Username</h3></label>
         <input
         className = 'allinputfields'
           name="username"
@@ -51,7 +52,7 @@ export function Login() {
           }}
           placeholder="Your User Name Here "
         ></input>
-        <label>Password</label>
+        <label><h3>Password</h3></label>
         <input
           id="password"
           className = 'allinputfields'
@@ -62,15 +63,15 @@ export function Login() {
           }}
           placeholder="Your Password Here "
         ></input>
-        <button id='allbuttons' onClick={login}>Login</button>
-      </div>
-      <button id="allbuttons"  onClick={showPassword}>
+      <button id="allbuttons" className='btn2' onClick={showPassword}>
         {' '}
         Show password
       </button>
-      <br></br>
-      <a id="gobackbutton" href="./createuser">
-        Sign Up Here
+      <hr />
+        <button id='allbuttons' className='btn1' onClick={login}>Login</button>
+      </div>
+      <a id="gobackbutton" href="./createuser"><h3>Sign Up Here</h3>
+        
       </a>
     </div>
   );

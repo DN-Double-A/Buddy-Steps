@@ -8,9 +8,10 @@ export function Task(props) {
 
     return (
         <div className='task'>
-          <div className='task-name'>{task}</div>
-          <div>startdate: {startdate}</div>
-          <div>enddate: {enddate}</div>
+          <h3 className='task-name'>{task}</h3>
+          <hr/>
+          <h4>startdate: {startdate}</h4>
+          <h4>enddate: {enddate}</h4>
         </div>
       );
 }

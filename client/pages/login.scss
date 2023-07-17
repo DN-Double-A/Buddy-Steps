@@ -1,55 +1,90 @@
 #createlogin {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin:auto;
+  margin: 80px auto;
   width: 50%;
   padding: 20px;
-  background-color:rgba(64, 71, 87, 0.481);
+  background-color: rgba(64, 71, 87, 0.481);
   border-radius: 20px;
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    letter-spacing: 0.05em;
+    font-weight: 550;
+  }
+  a {
+    margin-right: 22px;
+  }
 }
-#logincreate{
+
+h3 {
+  margin-top: 20px;
+}
+
+a h3 {
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  color: rgba(127, 212, 255, 0.733);
+  border: solid 3px rgba(127, 212, 255, 0.733);
+  border-radius: 32px;
+}
+
+#logincreate {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  label, h3 {
+    margin-bottom: 2px;
+  }
+  hr {
+    margin: 24px auto 20px;
+    width: 80%;
+  }
 }
-.allinputfields{
+
+
+.allinputfields {
   border-radius: 6px;
-  border:none;
-  width:80%;
-  margin:5px;
-  padding:5px;
-  background-color: rgba(64, 71, 87, 0.662);
+  border: none;
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 4px;
+  background-color: rgb(66, 73, 90);
+  color: rgba(246, 247, 249, 0.8);
 }
-#allbuttons{
-  margin:5px;
-  border-radius : 6px;
-  padding:5px;
-  border:none;
-  background-color: rgba(127, 212, 255, 0.733)
+#allbuttons {
+  width: 40%;
+  margin-top: 5px;
+  border-radius: 18px;
+  padding: 10px 5px;
+  border: none;
+  background-color: rgba(127, 212, 255, 0.733);
 }
-#allbuttons:hover{
-  cursor:pointer;
-  transform: translate(1px, 1px)
+
+#allbuttons:hover {
+  cursor: pointer;
+  transform: translate(1px, 1px);
 }
 .allinputfields::placeholder {
   text-align: center;
 }
 
-#gobackbutton{
-text-decoration: none;
-color:rgb(246, 247, 249) ;
-font-weight: bolder;
+#gobackbutton {
+  text-decoration: none;
+  color: rgb(246, 247, 249);
+  font-weight: bolder;
 }
-label{
-  align-self:flex-start;
-  margin-left: 26px;
+label {
+  align-self: flex-start;
+  margin-left: 40px;
 }
-h1,h2,h3,h4,h5,h6,a{
-  letter-spacing: 0.05em;
-  font-weight: 650;
-  margin:10px
-}
-
