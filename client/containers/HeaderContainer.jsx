@@ -1,16 +1,17 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { UserContext } from '../contexts/Contexts';
+import { UserContext, SideContext } from '../contexts/Contexts';
 import { NewTask } from '../components/NewTask.jsx';
 import Icon from '../Assets/Icon.png';
 
-export function Header(props) {
+export function HeaderContainer(props) {
   const { globalUsername } = useContext(UserContext);
+  const { isSideBarShowing, setIsSideBarShowing } = useContext(SideContext);
   const { setTaskData, setAreTasksChanged } = props;
 
   //& boolean state that controls 'taskPopup' pop up
   const [taskPopup, setTaskPopup] = useState(false);
   const [profile, setProfilePic] = useState('');
-  const [name, setName] = useState('')
+  const [name, setName] = useState('');
 
   useEffect(() => {
     const getData = async () => {
@@ -18,7 +19,7 @@ export function Header(props) {
         const res = await fetch(`/api/user/?username=${globalUsername}`);
         const data = await res.json();
         setProfilePic(data.profilepic);
-        setName(data.name)
+        setName(data.name);
       } catch (err) {
         console.log(err);
       }
@@ -33,6 +34,14 @@ export function Header(props) {
 
   function closeTaskPopup() {
     setTaskPopup(false);
+  }
+
+  function showSideBar() {
+    if (isSideBarShowing) {
+      setIsSideBarShowing(false);
+    } else {
+      setIsSideBarShowing(true);
+    }
   }
 
   return (

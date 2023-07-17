@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Header } from '../containers/HeaderContainer.jsx';
+import { HeaderContainer } from '../containers/HeaderContainer.jsx';
 import { TaskBoard } from '../containers/TaskBoardContainer.jsx';
 import { SideContainer } from '../containers/SideContainer.jsx';
 import { SideContext } from '../contexts/Contexts.jsx';
@@ -17,28 +17,22 @@ export function Home(props) {
 
   return (
     <>
-      <Header
-        taskData={taskData}
-        setTaskData={setTaskData}
-        setAreTasksChanged={setAreTasksChanged}
-      />
-      <div className="sidebar-taskboard-container">
-        {isSideBarShowing ? (
-          <SideContext.Provider
-            value={{ isSideBarShowing, setIsSideBarShowing }}
-          >
-            <SideContainer />
-          </SideContext.Provider>
-        ) : (
-          ''
-        )}
-        <TaskBoard
+      <SideContext.Provider value={{ isSideBarShowing, setIsSideBarShowing }}>
+        <HeaderContainer
           taskData={taskData}
           setTaskData={setTaskData}
           setAreTasksChanged={setAreTasksChanged}
-          areTasksChanged={areTasksChanged}
         />
-      </div>
+        <div className="sidebar-taskboard-container">
+          {isSideBarShowing ? <SideContainer /> : ''}
+          <TaskBoard
+            taskData={taskData}
+            setTaskData={setTaskData}
+            setAreTasksChanged={setAreTasksChanged}
+            areTasksChanged={areTasksChanged}
+          />
+        </div>
+      </SideContext.Provider>
     </>
   );
 }
