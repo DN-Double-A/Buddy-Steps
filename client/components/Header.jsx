@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { UserContext } from '../contexts/Contexts';
-import { NewTask } from '../components/NewTask.jsx';
-import Icon from '../assets/Icon.png';
+import UserContext from './UserContext';
+import { NewTask } from './NewTask.jsx';
 
 export function Header(props) {
   const { globalUsername } = useContext(UserContext);
@@ -10,7 +9,6 @@ export function Header(props) {
   //& boolean state that controls 'taskPopup' pop up
   const [taskPopup, setTaskPopup] = useState(false);
   const [profile, setProfilePic] = useState('');
-  const [name, setName] = useState('')
 
   useEffect(() => {
     const getData = async () => {
@@ -18,7 +16,6 @@ export function Header(props) {
         const res = await fetch(`/api/user/?username=${globalUsername}`);
         const data = await res.json();
         setProfilePic(data.profilepic);
-        setName(data.name)
       } catch (err) {
         console.log(err);
       }
@@ -38,10 +35,16 @@ export function Header(props) {
   return (
     <div className="header">
       <div className="header-container">
-        <img className='profile-pic ' src={profile} height="150px" width="150x" object-fit="cover" />
-        <h1>Welcome {name}<br/>Here are your Current Tasks: </h1>
         <img
-          src={Icon}
+          className="profile-pic"
+          src={profile}
+          height="150px"
+          width="150x"
+          object-fit="cover"
+        />
+        <h1>{globalUsername.toUpperCase()} TASKS</h1>
+        <img
+          src="../Assets/Icon.png"
           type="button"
           className="add-task-button"
           onClick={openTaskPopup}
