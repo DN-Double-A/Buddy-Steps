@@ -38,9 +38,12 @@ export function CreateUser() {
   };
 
   const options = [
-    { value:'https://ca.slack-edge.com/T04UDTZ6YA3-U058YU726UE-660ddfad6bdc-512',
-    label: <div><img src='https://ca.slack-edge.com/T04UDTZ6YA3-U058YU726UE-660ddfad6bdc-512' height = '100px' width = '100px'/></div>
-  }
+    { value:'https://media.licdn.com/dms/image/C4E03AQH4P4DxCHzF3g/profile-displayphoto-shrink_200_200/0/1652449349611?e=1695254400&v=beta&t=KiTMboL5sqFIkEy-359ot4rgIrsNQdOiXQZweQvWgYA',
+    label: <div><img src='https://media.licdn.com/dms/image/C4E03AQH4P4DxCHzF3g/profile-displayphoto-shrink_200_200/0/1652449349611?e=1695254400&v=beta&t=KiTMboL5sqFIkEy-359ot4rgIrsNQdOiXQZweQvWgYA' height = '100px' width = '100px'/></div>
+  },
+  { value:'https://media.discordapp.net/attachments/1117884044961648691/1129889905443606588/Screenshot_2023-07-15_at_5.36.36_PM.png?width=337&height=199',
+  label: <div><img src='https://media.discordapp.net/attachments/1117884044961648691/1129889905443606588/Screenshot_2023-07-15_at_5.36.36_PM.png?width=337&height=199' height = '100px' width = '100px'/></div>
+}
   ]
 
   const handleProfileChange = (selectedOption) =>{
