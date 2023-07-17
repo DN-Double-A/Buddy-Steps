@@ -11,7 +11,7 @@ export function TaskBoard(props) {
 
   const [editPopup, setEditPopup] = useState(false)
   const [taskIndex, setTaskIndex] = useState(-1)
-  
+
 
 
   //& Render tasks on start up and re-render them everytime the username or task data changes
@@ -22,7 +22,7 @@ export function TaskBoard(props) {
       const newTaskData = await response.json()
       // console.log(newTaskData)
       setTaskData(newTaskData)
-      console.log('length: ',newTaskData.length)
+      console.log('length: ', newTaskData.length)
     }
     getTasksData(username)
     // set boolean to false
@@ -30,35 +30,47 @@ export function TaskBoard(props) {
   }, [username, areTasksChanged]);
 
   //& When 'Add Task' button is clicked, trigger 'openTaskPopup' which changes the state of 'taskPopup' and causes the 'NewTask' component to appear
-  function openEditPopup(index){
+  function openEditPopup(index) {
     //~ Pass the index of the Edit Task object to pull data corresponding to index
     setTaskIndex(index)
     //~ set boolean to true so that the edit pop up will appear
     setEditPopup(true)
   }
 
-  function closeEditPopup(){
+  function closeEditPopup() {
     setEditPopup(false)
   }
 
-   //& Deletes task from taskData
-   function deleteTask(index){
-    //~ Delete from task data
-    const newTaskData = [...taskData]
-    newTaskData.splice(index, 1)
-    setTaskData(newTaskData)
+  //& Deletes task from taskData
+  async function deleteTask(index) {
+    //~ Get task id corresponding to index
+    const taskID = taskData[index].taskID
+    try {
+      //~ Delete from database
+      const response = await fetch(`/api/task/?taskId=${taskID}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    //~ Assign setAreTasksChanged to true to board is refreshed
-    setAreTasksChanged(true)
+      //~ Assign setAreTasksChanged to true to board is refreshed
+      setAreTasksChanged(true)
+
+    }
+    catch (err) {
+      console.log('error occured in delete Task, ', err)
+    }
+
   }
 
 
   return (
     <div className='task-board'>
       {taskData.map((task, index) => {
-        return <Task task={task.task} startdate = {task.startdate} enddate={task.enddate} key={index} index={index} setTaskData={setTaskData} openEditPopup={openEditPopup}/>
+        return <Task task={task.task} startdate={task.startdate} enddate={task.enddate} key={index} index={index} setTaskData={setTaskData} openEditPopup={openEditPopup} deleteTask={deleteTask} />
       })}
-      <EditTask editPopup={editPopup} closeEditPopup={closeEditPopup} taskIndex={taskIndex} taskData={taskData} setTaskIndex={setTaskIndex} setAreTasksChanged={setAreTasksChanged}/>
+      <EditTask editPopup={editPopup} closeEditPopup={closeEditPopup} taskIndex={taskIndex} taskData={taskData} setTaskIndex={setTaskIndex} setAreTasksChanged={setAreTasksChanged} />
 
     </div>
   );
