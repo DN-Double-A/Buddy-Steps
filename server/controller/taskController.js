@@ -69,10 +69,10 @@ taskController.createTask = async function (req, res, next) {
     // this query is going to insert the current user id and the newly created taskid so that they can be connected in the join table.
     const joinTableQuery = {
       text: `
-      INSERT INTO userstasksjointable (userId, taskid)
-      VALUES ($1, $2);
+      INSERT INTO userstasksjointable (userId, taskid, currprogress)
+      VALUES ($1, $2, $3);
       `,
-      values: [userId, newTaskId],
+      values: [userId, newTaskId, 0],
     };
     res.locals.newTaskId = newTaskId;
     await db.query(joinTableQuery);
