@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/Contexts';
 
-
 export function Task(props) {
-  const { task, taskID, startdate, enddate, openEditPopup, index, deleteTask } = props;
+  const { task, taskID, startdate, enddate, openEditPopup, index, deleteTask } =
+    props;
   const currentDate = new Date();
   const newEndDate = new Date(enddate);
   const formattedStartDate = formatDate(currentDate);
   const formattedEndDate = formatDate(newEndDate);
   const daysLeft = calcDaysLeft(newEndDate, currentDate);
-  const [progressBarValue, setProgressBarValue] = useState(0)
+  const [progressBarValue, setProgressBarValue] = useState(0);
   const { globalUsername } = useContext(UserContext);
 
   // //& Update progress bar on render, render every time progressBarValue changes
@@ -71,22 +71,27 @@ export function Task(props) {
     //     newprogress: newProgressBarValue,
     //   }),
     // })
-    setProgressBarValue(progressBarValue+10);
+    setProgressBarValue(progressBarValue + 10);
   }
 
   return (
     <div className="task">
-      <div className="task-name"><h3>{task.toUpperCase()}</h3></div>
+      <div className="task-name">
+        <h3>{task.toUpperCase()}</h3>
+      </div>
       <hr />
       <div id="start-date">Start Date: {formattedStartDate}</div>
       <div id="end-date">End Date: {formattedEndDate}</div>
       <div id="days-left">{daysLeft}</div>
       <progress className="progress-bar" value={progressBarValue} max="100" />
       <button
+        id="allbuttons"
         className="progress-bar-progress-button"
         onClick={updateProgress}
         index={index}
-      >Update Progress</button>
+      >
+        Update Progress
+      </button>
       <hr />
       <button
         id="allbuttons"
