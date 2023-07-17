@@ -86,8 +86,8 @@ body {
   background: linear-gradient(
     to bottom right,
     rgb(102, 191, 226),
-    rgb(131, 200, 227))
-  ;
+    rgb(131, 200, 227)
+  );
 }
 
 .task-board {
@@ -202,7 +202,6 @@ hr {
     letter-spacing: 0.05em;
     font-weight: 550;
   }
-  
 }
 
 .edit-task-popup-inner {
@@ -286,8 +285,14 @@ hr {
 }
 
 @keyframes slow-load-in {
-  from{opacity: 0; transform: translateX(10px)}
-  to{opacity: 1; transform: translateX(0px)}
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 @keyframes fly-in-right {
