@@ -65,6 +65,13 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/i, //handle css files
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg|ico)$/,
         use: [
           {
