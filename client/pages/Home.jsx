@@ -8,25 +8,25 @@ export function Home(props) {
   //& Passing state variables to Header and Taskboard
   //& Both componenets need state variable hence why I am initializing them in this component
   const [taskData, setTaskData] = useState([]);
-
+  const [isSideBarShowing, setIsSideBarShowing] = useState(false);
   // Creating boolean to notify when the TaskBoard should be refreshed
   const [isNewTaskAdded, setIsNewTaskAdded] = useState(false);
 
-  // Creating boolean for conditional rendering of side bar
-  const [isSideBarShowing, setIsSideBarShowing] = useState(false);
+  // Creating boolean to notify when the TaskBoard should be refreshed
+  const [areTasksChanged, setAreTasksChanged] = useState(false);
 
   return (
     <div>
       <Header
         taskData={taskData}
         setTaskData={setTaskData}
-        setIsNewTaskAdded={setIsNewTaskAdded}
+        setAreTasksChanged={setAreTasksChanged}
       />
       <TaskBoard
         taskData={taskData}
         setTaskData={setTaskData}
-        setIsNewTaskAdded={setIsNewTaskAdded}
-        isNewTaskAdded={isNewTaskAdded}
+        setAreTasksChanged={setAreTasksChanged}
+        areTasksChanged={areTasksChanged}
       />
       {isSideBarShowing ? (
         <SideContext.Provider value={{ isSideBarShowing, setIsSideBarShowing }}>

@@ -1,55 +1,119 @@
+#root {
+  height: 100vh;
+}
+
 #createlogin {
+  min-width: 350px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin:auto;
-  width: 50%;
+  margin: 80px auto;
+  max-width: 500px;
   padding: 20px;
-  background-color:rgba(64, 71, 87, 0.481);
+  background-color: rgba(64, 71, 87, 0.481);
   border-radius: 20px;
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    letter-spacing: 0.05em;
+    font-weight: 550;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  a {
+    margin-right: 22px;
+  }
+  animation: loadin 2s 
 }
-#logincreate{
+
+
+@keyframes loadin{
+  from{
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to{
+opacity:1;
+transform:translateX(0)
+  }
+}
+
+h3 {
+  // margin-top: 20px;
+}
+#userdirect{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+a h3 {
+  // text-align: center;
+  // text-decoration: underline;
+  width: 100%;
+  // padding: 8px;
+  color: rgba(127, 212, 255, 0.733);
+  // border: solid 3px rgba(127, 212, 255, 0.733);
+  // border-radius: 32px;
+}
+}
+#logincreate {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  h3 {
+    margin-bottom: 4px;
+  }
+  hr {
+    // margin: 24px auto 20px;
+    width: 80%;
+  }
 }
-.allinputfields{
+
+.input-container {
+  width: 80%;
+}
+
+.allinputfields {
   border-radius: 6px;
-  border:none;
-  width:80%;
-  margin:5px;
-  padding:5px;
-  background-color: rgba(64, 71, 87, 0.662);
+  border: none;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 4px;
+  background-color: rgb(66, 73, 90);
+  color: rgba(246, 247, 249, 0.8);
 }
-#allbuttons{
-  margin:5px;
-  border-radius : 6px;
-  padding:5px;
-  border:none;
-  background-color: rgba(127, 212, 255, 0.733)
-}
-#allbuttons:hover{
-  cursor:pointer;
-  transform: translate(1px, 1px)
-}
+
 .allinputfields::placeholder {
   text-align: center;
 }
 
-#gobackbutton{
-text-decoration: none;
-color:rgb(246, 247, 249) ;
-font-weight: bolder;
-}
-label{
-  align-self:flex-start;
-  margin-left: 26px;
-}
-h1,h2,h3,h4,h5,h6,a{
-  letter-spacing: 0.05em;
-  font-weight: 650;
-  margin:10px
+#allbuttons {
+  width: 40%;
+  margin-top: 5px;
+  border-radius: 18px;
+  padding: 10px 5px;
+  border: none;
+  background-color: rgba(127, 212, 255, 0.733);
 }
 
+#allbuttons:hover {
+  cursor: pointer;
+  transform: translate(1px, 1px);
+  color:var(--clr-light)
+}
+
+#gobackbutton {
+  text-align: center;
+  margin-left:10px;
+  text-decoration: underline;
+  color: rgba(127, 212, 255, 0.733);
+  font-weight: bolder;
+}

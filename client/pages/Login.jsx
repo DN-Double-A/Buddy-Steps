@@ -21,6 +21,8 @@ export function Login() {
         alert('Username or Password does not exist');
       }
       if (data === 'true') {
+        //TODO: set username here
+        window.location.href = '/home'
         console.log('hey im in');
       }
     } catch (error) {
@@ -40,38 +42,42 @@ export function Login() {
     <div id = 'createlogin'>
       <div id = 'logincreate'>
         <h1>Welcome to Step Buddy</h1>
-        <h3>Sign in Below</h3>
-        <label>Username</label>
-        <input
-        className = 'allinputfields'
-          name="username"
-          type="text"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          placeholder="Your User Name Here "
-        ></input>
-        <label>Password</label>
-        <input
-          id="password"
+        <hr />
+        <h2>Sign in Below</h2>
+        <div className='input-container'>
+          <label><h3 className='name-h3' >Username</h3></label>
+          <input
           className = 'allinputfields'
-          name="password"
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          placeholder="Your Password Here "
-        ></input>
-        <button id='allbuttons' onClick={login}>Login</button>
-      </div>
-      <button id="allbuttons"  onClick={showPassword}>
+            name="username"
+            type="text"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            placeholder="Your User Name Here "
+          ></input>
+        </div>
+        <div className='input-container'>
+          <label><h3>Password</h3></label>
+          <input
+            id="password"
+            className = 'allinputfields'
+            name="password"
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Your Password Here "
+          ></input>
+        </div>
+      <button id="allbuttons" className='btn2' onClick={showPassword}>
         {' '}
         Show password
       </button>
-      <br></br>
-      <a id="gobackbutton" href="./createuser">
-        Sign Up Here
-      </a>
+      <hr />
+        <button id='allbuttons' className='btn1' onClick={login}>Login</button>
+      </div>
+      <div id = 'userdirect'><h3>New to Step Buddy?</h3><a id="gobackbutton" href="./createuser"><h3>Sign Up Here</h3>
+      </a></div>
     </div>
   );
 }
