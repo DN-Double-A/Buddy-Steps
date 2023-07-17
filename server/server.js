@@ -14,8 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 // if we need to serve any static files, serve them here:
-app.use('/assets', express.static(path.resolve(__dirname, '../client/assets')));
-
+app.use('/Assets',express.static(path.resolve(__dirname, '../client/assets')));
 // insert routes here, please specify specific routes / what they will do:
 //GOES TO USER ROUTER
 app.use('/api/user', userRouter);
