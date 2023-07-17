@@ -163,6 +163,20 @@ hr {
   }
 }
 
+.edit-task-popup-inner {
+  width: 40%;
+  position: relative;
+  padding: 36px;
+  background-color: rgb(44, 48, 59);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+  align-items: center;
+  text-align: center;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
 .task-form {
   width: 100%;
   display: flex;
@@ -197,17 +211,17 @@ hr {
   // background-color: #f3f3f3;
 }
 
-.progress-bar-delete-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+// .progress-bar-delete-button {
+//   position: relative;
+//   top: 0;
+//   right: 0;
+// }
 
-.progress-bar-edit-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+// .progress-bar-edit-button {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+// }
 
 .form {
   display: flex;

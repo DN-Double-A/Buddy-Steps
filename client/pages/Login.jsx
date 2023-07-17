@@ -21,6 +21,8 @@ export function Login() {
         alert('Username or Password does not exist');
       }
       if (data === 'true') {
+        //TODO: set username here
+        window.location.href = '/home'
         console.log('hey im in');
       }
     } catch (error) {

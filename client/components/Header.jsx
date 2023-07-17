@@ -28,7 +28,7 @@ export function Header(props) {
       <h1>{username.toUpperCase()} TASKS</h1>
       <img src={addIcon} type='button' className='add-task-button' onClick={openTaskPopup} />
       </div>
-      <NewTask setTaskData={setTaskData} taskPopup={taskPopup} closeTaskPopup={closeTaskPopup} setIsNewTaskAdded={setIsNewTaskAdded}/>
+      <NewTask setTaskData={setTaskData} taskPopup={taskPopup} closeTaskPopup={closeTaskPopup} setAreTasksChanged={setAreTasksChanged}/>
     </div>
   );
 }

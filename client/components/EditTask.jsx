@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import UserContext from './UserContext';
-import { deleteTask } from '../../server/controller/taskController';
 
 export function EditTask(props) {
   const { editPopup, closeEditPopup, taskIndex, setTaskIndex, taskData, setAreTasksChanged } = props;
