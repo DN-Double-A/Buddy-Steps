@@ -65,41 +65,17 @@ export function NewTask(props) {
             <h2>Create a New Task</h2>
             <hr />
 
-              <form onSubmit={handleSubmit} className='form'>
-                <div>
-                  <label htmlFor='taskName'>Task Name:</label>
-                  <input type='text' id='taskName' name='taskName' value={formData.taskName} onChange={handleChange}></input>
-                </div>
-                <div>
-                  <label htmlFor='days'>Number of Days to Complete Task:</label>
-                  <input type='text' id='days' name='days' value={formData.days} onChange={handleChange}></input>
-                </div>
-                <button className='new-task-submit-button' >Submit</button>
-              </form>
-
-              <input
-                type="text"
-                id="taskName"
-                name="taskName"
-                value={formData.taskName}
-                onChange={handleChange}
-                placeholder="Your Task Here "
-              ></input>
-
-              <label htmlFor="days"><h3>Number of Days to Complete</h3></label>
-
-              <input
-                type="text"
-                id="days"
-                name="days"
-                value={formData.days}
-                onChange={handleChange}
-                placeholder="Your Day Count Here "
-              ></input>
-
-              <button className="new-task-submit-button">Submit</button>
+            <form onSubmit={handleSubmit} className='form'>
+              <div>
+                <label htmlFor='taskName'>Task Name:</label>
+                <input type='text' id='taskName' name='taskName' value={formData.taskName} onChange={handleChange}></input>
+              </div>
+              <div>
+                <label htmlFor='days'>Number of Days to Complete Task:</label>
+                <input type='text' id='days' name='days' value={formData.days} onChange={handleChange}></input>
+              </div>
+              <button className='new-task-submit-button' >Submit</button>
             </form>
-
             <button className="new-task-close-button" onClick={closeTaskPopup}>
               x
             </button>

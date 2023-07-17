@@ -65,21 +65,16 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/i, //handle css files
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      },
-      {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg|ico)$/,
-        oneOf: [
+        use: [
           {
-            dependency: { not: ['url'] }, // exclude new URL calls
-            use: ['new-url-loader'],
-          },
-          {
-            type: 'asset', // export a data URI or emit a separate file
+            // loads files as base64 encoded data url if image file is less than set limit
+            // loader: 'file-loader',
+            loader: 'url-loader',
+            options: {
+              // if file is greater than the limit (bytes), file-loader is used as fallback
+              limit: 8192,
+            },
           },
         ],
       },
