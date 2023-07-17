@@ -77,8 +77,10 @@ export function EditTask(props) {
   return (
     <div>
       {editPopup ? (
-        <div className="edit-task-popup">
-          <div className="edit-task-popup-inner">
+        <div className="new-task-popup">
+          <div className="new-task-popup-inner">
+            <h2>Edit Your Task</h2>
+            <hr />
             <form onSubmit={handleSubmit} className="form">
               <div>
                 <label htmlFor="updatedTask">Task Name:</label>
@@ -93,20 +95,21 @@ export function EditTask(props) {
               <div>
                 <label htmlFor="updatedEndTime">End Date:</label>
                 {/* <input type='text' id='text' name='updatedEndTime' value={formData.updatedEndTime} onChange={handleChange}></input> */}
-                <DatePicker
-                  selected={new Date(formData.updatedEndTime)}
-                  onChange={(date) => {
-                    setFormData((prevForm) => {
-                      return { ...prevForm, updatedEndTime: date };
-                    });
-                  }}
-                />
+                <div>
+                  <DatePicker
+                    selected={new Date(formData.updatedEndTime)}
+                    onChange={(date) => {
+                      setFormData((prevForm) => {
+                        return { ...prevForm, updatedEndTime: date };
+                      });
+                    }}
+                  />
+                </div>
               </div>
-              <button className="edit-task-submit-button">Submit</button>
+              <button className="new-task-submit-button">Submit</button>
             </form>
-
-            <button className="edit-task-close-button" onClick={closeEditPopup}>
-              X
+            <button className="new-task-close-button" onClick={closeEditPopup}>
+              x
             </button>
           </div>
         </div>

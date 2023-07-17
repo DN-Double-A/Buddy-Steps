@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../contexts/Contexts';
 import { NewTask } from '../components/NewTask.jsx';
-import Icon from '../assets/Icon.png';
+import Icon from '../Assets/Icon.png';
 
 export function Header(props) {
   const { globalUsername } = useContext(UserContext);
