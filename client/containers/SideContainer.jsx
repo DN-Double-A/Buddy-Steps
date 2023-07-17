@@ -1,8 +1,11 @@
 import React from 'react';
 import { SideComponent } from '../components/SideComponent';
+import '../styles/sidebarStyles.scss';
 
 export function SideContainer() {
-  <div className="main-side-container">
-    <SideComponent />
-  </div>;
+  return (
+    <div className="main-side-container">
+      <SideComponent />
+    </div>
+  );
 }
