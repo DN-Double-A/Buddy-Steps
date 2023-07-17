@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 import { useState } from 'react';
-import './login.scss'
+import '../styles/login.scss'
 
 export function CreateUser() {
   const [password, setPassword] = useState('');

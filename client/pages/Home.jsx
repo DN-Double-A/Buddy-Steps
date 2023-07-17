@@ -23,12 +23,6 @@ export function Home(props) {
         setAreTasksChanged={setAreTasksChanged}
       />
       <div className="sidebar-taskboard-container">
-        <TaskBoard
-          taskData={taskData}
-          setTaskData={setTaskData}
-          setAreTasksChanged={setAreTasksChanged}
-          areTasksChanged={areTasksChanged}
-        />
         {isSideBarShowing ? (
           <SideContext.Provider
             value={{ isSideBarShowing, setIsSideBarShowing }}
@@ -38,6 +32,12 @@ export function Home(props) {
         ) : (
           ''
         )}
+        <TaskBoard
+          taskData={taskData}
+          setTaskData={setTaskData}
+          setAreTasksChanged={setAreTasksChanged}
+          areTasksChanged={areTasksChanged}
+        />
       </div>
     </>
   );

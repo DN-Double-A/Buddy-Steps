@@ -40,9 +40,9 @@ getData()
   return (
     <div className='header'>
       <div className='header-container'>
-        <img src = {profile} height = '150px' width = '150x' object-fit= 'cover'/>
+        <img className='profile-pic' src = {profile} height = '150px' width = '150x' object-fit= 'cover'/>
         <h1>{globalUsername.toUpperCase()} TASKS</h1>
-        <img src={addIcon} type='button' className='add-task-button' onClick={openTaskPopup} />
+        <img src={Icon} type='button' className='add-task-button' onClick={openTaskPopup} />
       </div>
       <NewTask setTaskData={setTaskData} taskPopup={taskPopup} closeTaskPopup={closeTaskPopup} setAreTasksChanged={setAreTasksChanged} />
     </div>

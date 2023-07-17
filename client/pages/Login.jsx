@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './login.scss'
+import '../styles/login.scss'
 import UserContext from '../components/UserContext';
 
 export function Login() {
