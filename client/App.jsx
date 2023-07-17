@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 
 export function App() {
   //& Using UserContext to have 'username' and 'setUserName' as global variables throughout are app (ITS OP!)
-  const [globalUsername, setGlobalUsername] = useState('currymonstanacho');
+  const [globalUsername, setGlobalUsername] = useState('Anthony');
 
   return (
     <UserContext.Provider value={{ globalUsername, setGlobalUsername }}>

@@ -83,7 +83,7 @@ export function EditTask(props) {
             <hr />
             <form onSubmit={handleSubmit} className="form">
               <div>
-                <label htmlFor="updatedTask">Task Name:</label>
+                <label htmlFor="updatedTask"><h3>Task Name</h3></label>
                 <input
                   type="text"
                   id="text"
@@ -93,7 +93,7 @@ export function EditTask(props) {
                 ></input>
               </div>
               <div>
-                <label htmlFor="updatedEndTime">End Date:</label>
+                <label htmlFor="updatedEndTime"><h3>End Date</h3></label>
                 {/* <input type='text' id='text' name='updatedEndTime' value={formData.updatedEndTime} onChange={handleChange}></input> */}
                 <div>
                   <DatePicker

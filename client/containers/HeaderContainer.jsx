@@ -39,7 +39,7 @@ export function Header(props) {
     <div className="header">
       <div className="header-container">
         <img className='profile-pic ' src={profile} height="150px" width="150x" object-fit="cover" />
-        <h1>Welcome {name}<br/>Here are your Current Tasks: </h1>
+        <h1>Welcome {name}<br/>Here are your Current Habits: </h1>
         <img
           src={Icon}
           type="button"
