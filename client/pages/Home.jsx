@@ -10,31 +10,35 @@ export function Home(props) {
   const [taskData, setTaskData] = useState([]);
 
   // Creating boolean to conditionally render the side bar.
-  const [isSideBarShowing, setIsSideBarShowing] = useState(false);
+  const [isSideBarShowing, setIsSideBarShowing] = useState(true);
 
   // Creating boolean to notify when the TaskBoard should be refreshed
   const [areTasksChanged, setAreTasksChanged] = useState(false);
 
   return (
-    <div>
+    <>
       <Header
         taskData={taskData}
         setTaskData={setTaskData}
         setAreTasksChanged={setAreTasksChanged}
       />
-      <TaskBoard
-        taskData={taskData}
-        setTaskData={setTaskData}
-        setAreTasksChanged={setAreTasksChanged}
-        areTasksChanged={areTasksChanged}
-      />
-      {isSideBarShowing ? (
-        <SideContext.Provider value={{ isSideBarShowing, setIsSideBarShowing }}>
-          <SideContainer />
-        </SideContext.Provider>
-      ) : (
-        ''
-      )}
-    </div>
+      <div className="sidebar-taskboard-container">
+        <TaskBoard
+          taskData={taskData}
+          setTaskData={setTaskData}
+          setAreTasksChanged={setAreTasksChanged}
+          areTasksChanged={areTasksChanged}
+        />
+        {isSideBarShowing ? (
+          <SideContext.Provider
+            value={{ isSideBarShowing, setIsSideBarShowing }}
+          >
+            <SideContainer />
+          </SideContext.Provider>
+        ) : (
+          ''
+        )}
+      </div>
+    </>
   );
 }
