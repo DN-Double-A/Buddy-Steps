@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../contexts/Contexts';
 import { NewTask } from '../components/NewTask.jsx';
-import Icon from '../Assets/Icon.png';
-import addIcon from '../Assets/addIcon.png';
+import Icon from '../assets/Icon.png';
 
 export function Header(props) {
   const { globalUsername } = useContext(UserContext);
@@ -39,10 +38,10 @@ export function Header(props) {
   return (
     <div className="header">
       <div className="header-container">
-        <img src={profile} height="150px" width="150x" object-fit="cover" />
+        <img className='profile-pic ' src={profile} height="150px" width="150x" object-fit="cover" />
         <h1>Welcome {name}<br/>Here are your Current Tasks: </h1>
         <img
-          src={addIcon}
+          src={Icon}
           type="button"
           className="add-task-button"
           onClick={openTaskPopup}
