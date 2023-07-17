@@ -6,6 +6,7 @@ const PORT = 3000;
 
 const userRouter = require('./routes/userRouter');
 const taskRouter = require('./routes/taskRouter');
+const progressRouter = require('./routes/progressRouter');
 
 // including cookies, urlencoder, and express.json
 app.use(cookieParser());
@@ -19,6 +20,8 @@ app.use('/assets',express.static(path.resolve(__dirname, '../client/assets')));
 app.use('/api/user', userRouter);
 //GOES TO TASK ROUTER
 app.use('/api/task', taskRouter);
+//GOES TO PROGRESS ROUTER
+app.use('/api/progress', progressRouter);
 // catch all error handler
 app.use('/', (req, res) => {
   res.status(404).send('Not Found');
