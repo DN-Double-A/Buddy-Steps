@@ -106,8 +106,11 @@ a h3 {
 
 #allbuttons:hover {
   cursor: pointer;
-  transform: translate(1px, 1px);
-  color:var(--clr-light)
+  transform: translate(1px, 1px) ;
+  color: white;
+}
+.allinputfields::placeholder {
+  text-align: center;
 }
 
 #gobackbutton {
