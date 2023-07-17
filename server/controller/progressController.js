@@ -17,7 +17,7 @@ progressController.getProgress = async function (req, res, next) {
         let result = await db.query(queryString, [username])
         const userId = Number(result.rows[0].userid)
 
-        //~ Get the current progress for that task and username
+        //~ Get the current progress for that task and userId
         queryString =
             `SELECT * FROM userstasksjointable
         WHERE userid=$1 AND taskid=$2`
