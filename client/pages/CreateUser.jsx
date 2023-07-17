@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { useState } from 'react';
 import '../styles/login.scss';
+import kyle from '../Assets/kyle.png';
 
 export function CreateUser() {
   const [password, setPassword] = useState('');
@@ -63,6 +64,19 @@ export function CreateUser() {
         <div>
           <img
             src="https://media.discordapp.net/attachments/1117884044961648691/1129889905443606588/Screenshot_2023-07-15_at_5.36.36_PM.png?width=337&height=199"
+            height="100px"
+            width="100px"
+          />
+        </div>
+      ),
+    },
+    {
+      value:
+        `${kyle}`,
+      label: (
+        <div>
+          <img
+            src = {kyle}
             height="100px"
             width="100px"
           />
