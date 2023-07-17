@@ -6,16 +6,15 @@ const progressController = {};
 //& For a taskId + username gets the progress
 //& taskId comes as a number, username as a string
 progressController.getProgress = async function (req, res, next) {
-    try {
-        //~ Get task and username from POST body
-        const { taskId, username } = req.body;
+  try {
+    //~ Get task and username from POST body
+    const { taskId, username } = req.body;
 
-        //~ Get userId from User table
-        let queryString =
-            `SELECT id as userId FROM Users
+    //~ Get userId from User table
+    let queryString = `SELECT id as userId FROM Users
         WHERE username = $1`;
-        let result = await db.query(queryString, [username])
-        const userId = Number(result.rows[0].userid)
+    let result = await db.query(queryString, [username]);
+    const userId = Number(result.rows[0].userid);
 
         //~ Get the current progress for that task and userId
         queryString =
@@ -23,17 +22,15 @@ progressController.getProgress = async function (req, res, next) {
         WHERE userid=$1 AND taskid=$2`
         result = await db.query(queryString, [userId, taskId])
 
-        //~ Pass it back
-        res.locals.data = result.rows[0]
-        console.log(res.locals.data)
-        return next()
-
-    }
-    catch (err) {
-        const log = `Error occuring in progressController.getProgress: ${err}`;
-        const message = { err: 'Error occured on server side' };
-        return next({ log: log, message: message });
-    }
+    //~ Pass it back
+    res.locals.data = result.rows[0];
+    console.log(res.locals.data);
+    return next();
+  } catch (err) {
+    const log = `Error occuring in progressController.getProgress: ${err}`;
+    const message = { err: 'Error occured on server side' };
+    return next({ log: log, message: message });
+  }
 };
 
 //& taskId + username + newprogress => update taskcurrdate
@@ -43,15 +40,14 @@ progressController.setProgress = async function (req, res, next) {
         //~ Get task and username from PATCH body
         const { taskId, username, newprogress } = req.body;
 
-        //~ Get userId from User table
-        let queryString =
-            `SELECT id as userId FROM Users
+    //~ Get userId from User table
+    let queryString = `SELECT id as userId FROM Users
         WHERE username = $1`;
 
         let result = await db.query(queryString, [username])
         const userId = Number(result.rows[0].userid)
-        console.log(req.body)
-        console.log('query string: ', [newprogress, userId, taskId])
+        // console.log(req.body)
+        // console.log('query string: ', [newprogress, userId, taskId])
         //~ Using taskId and userId, update taskcurrdate (newProgress)
         queryString = 
         `UPDATE userstasksjointable
@@ -60,16 +56,15 @@ progressController.setProgress = async function (req, res, next) {
         RETURNING *;`
         result = await db.query(queryString, [newprogress, userId, taskId] )
 
-        //~ Pass back updated data
-        res.locals.data = result.rows[0]
-        return next()
-    }
-    catch (err) {
-        const log = `Error occuring in progressController.setProgress: ${err}`;
-        const message = { err: 'Error occured on server side' };
-        return next({ log: log, message: message });
-    }
-}
+    //~ Pass back updated data
+    res.locals.data = result.rows[0];
+    return next();
+  } catch (err) {
+    const log = `Error occuring in progressController.setProgress: ${err}`;
+    const message = { err: 'Error occured on server side' };
+    return next({ log: log, message: message });
+  }
+};
 
 module.exports = progressController;
 

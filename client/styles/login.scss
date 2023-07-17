@@ -4,12 +4,12 @@
 
 #createlogin {
   min-width: 350px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 80px auto;
-  max-width: 500px;
   padding: 20px;
   background-color: rgba(64, 71, 87, 0.481);
   border-radius: 20px;
@@ -46,9 +46,6 @@
   }
 }
 
-h3 {
-  // margin-top: 20px;
-}
 #userdirect {
   display: flex;
   flex-direction: row;
@@ -96,12 +93,16 @@ h3 {
 }
 
 #allbuttons {
-  width: 40%;
+  width: 160px;
   margin-top: 5px;
   border-radius: 18px;
   padding: 10px 5px;
   border: none;
   background-color: rgba(127, 212, 255, 0.733);
+  .progress-bar-edit-button,
+  .progress-bar-delete-button {
+    margin: 50px;
+  }
 }
 
 #allbuttons:hover {

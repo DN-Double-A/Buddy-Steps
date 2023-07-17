@@ -76,7 +76,7 @@ export function Task(props) {
 
   return (
     <div className="task">
-      <div className="task-name">{task}</div>
+      <div className="task-name"><h3>{task.toUpperCase()}</h3></div>
       <hr />
       <div id="start-date">Start Date: {formattedStartDate}</div>
       <div id="end-date">End Date: {formattedEndDate}</div>
@@ -89,6 +89,7 @@ export function Task(props) {
       >Update Progress</button>
       <hr />
       <button
+        id="allbuttons"
         className="progress-bar-edit-button"
         onClick={() => openEditPopup(index)}
         index={index}
@@ -96,10 +97,11 @@ export function Task(props) {
         Edit
       </button>
       <button
+        id="allbuttons"
         className="progress-bar-delete-button"
         onClick={() => deleteTask(index)}
       >
-        X
+        Delete Habit
       </button>
     </div>
   );

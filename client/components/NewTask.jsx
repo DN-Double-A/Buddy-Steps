@@ -67,35 +67,35 @@ export function NewTask(props) {
 
             <form onSubmit={handleSubmit} className="form">
               <div>
-                <label htmlFor="taskName">Task Name:</label>
+                <label htmlFor="taskName"><h3>Task Name</h3></label>
                 <input
                   type="text"
                   id="taskName"
                   name="taskName"
                   value={formData.taskName}
                   onChange={handleChange}
+                  placeholder='New Task'
                 ></input>
               </div>
               <div>
-                <label htmlFor="days">Number of Days to Complete Task:</label>
+                <label htmlFor="days"><h3>Days to Complete Task</h3></label>
                 <input
                   type="text"
                   id="days"
                   name="days"
                   value={formData.days}
                   onChange={handleChange}
+                  placeholder='Days to Complete'
                 ></input>
               </div>
-              <button className="new-task-submit-button">Submit</button>
-            </form>
-            <button className="new-task-close-button" onClick={closeTaskPopup}>
-              x
-            </button>
+                <button className="new-task-submit-button">Submit</button>
+                </form>
+                <button className="new-task-close-button" onClick={closeTaskPopup}>
+                x
+                </button>
           </div>
         </div>
-      ) : (
-        ''
-      )}
+      ) : ('')}
     </div>
   );
 }
