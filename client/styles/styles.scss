@@ -93,7 +93,6 @@ body {
   );
   img {
     margin: 20px 0;
-   
   }
   img:hover {
     cursor: pointer;
@@ -103,7 +102,7 @@ body {
 
   #friends-button {
     filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%)
-    saturate(420%) opacity(80%);
+      saturate(420%) opacity(80%);
     padding: 5px;
     border: solid 3px;
     border-radius: 16px;
@@ -111,27 +110,37 @@ body {
 
   #camera-button {
     filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%)
-    saturate(420%) opacity(80%);
+      saturate(420%) opacity(80%);
     max-width: 72px;
     border: solid 3px;
     border-radius: 16px;
   }
 
   .complete {
-    filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(35%)
-    saturate(420%) opacity(90%);
+    filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%)
+      saturate(420%) opacity(80%);
     align-self: center;
     max-width: 72px;
     border-radius: 16px;
   }
 
-  #complete-button {
+  .complete-span {
+    margin: 20px;
+    display: flex;
     border: solid 3px white;
+    max-height: 72px;
+    border-radius: 16px;
+  }
+
+  .complete-span:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.1s ease-out;
   }
 
   #sign-out-button {
     filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%)
-    saturate(420%) opacity(80%);
+      saturate(420%) opacity(80%);
     max-width: 72px;
     border: solid 3px;
     border-radius: 16px;
@@ -147,14 +156,21 @@ body {
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   justify-items: center;
   animation: fly-in-right 3s;
   overflow-y: scroll;
 }
 
+#start-date,
+#end-date,
+#days-left {
+  margin: 4px;
+}
+
 hr {
   width: 80%;
+  margin: 16px;
 }
 
 .task {
@@ -167,7 +183,7 @@ hr {
   text-align: center;
   margin: 24px;
   width: 40vw;
-  max-width: 400px;
+  max-width: 450px;
   max-height: 400px;
   padding: 24px;
   border-radius: 14px;
@@ -237,6 +253,7 @@ hr {
 .new-task-popup-inner {
   width: 40%;
   min-width: 280px;
+  max-width: 470px;
   position: relative;
   padding: 36px;
   background-color: rgb(44, 48, 59);
