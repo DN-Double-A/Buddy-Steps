@@ -64,6 +64,7 @@ export function TaskBoard(props) {
         return (
           <Task
             task={task.task}
+            taskID={task.taskID}
             startdate={task.startdate}
             enddate={task.enddate}
             key={index}

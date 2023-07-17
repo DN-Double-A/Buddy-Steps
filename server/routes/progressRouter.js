@@ -6,7 +6,7 @@ const progressController = require('../controller/progressController');
 
 //& For a taskId + username gets the progress
 // taskId and username will come form body
-router.get('/', progressController.getProgress, (req, res) => {
+router.post('/', progressController.getProgress, (req, res) => {
     // console.log('in get router for progress');
     res.status(200).json(res.locals.data);
 })
@@ -14,8 +14,8 @@ router.get('/', progressController.getProgress, (req, res) => {
 
 //& For a taskId + username sets progress
 router.patch('/', progressController.setProgress, (req, res) => {
-    console.log('in set router for progress');
-    console.log(res.locals.data)
+    // console.log('in set router for progress');
+    // console.log(res.locals.data)
     res.status(200).json(res.locals.data);
 })
 
