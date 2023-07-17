@@ -3,7 +3,7 @@ import { UserContext, SideContext } from '../contexts/Contexts';
 import { NewTask } from '../components/NewTask.jsx';
 import Icon from '../Assets/Icon.png';
 
-export function Header(props) {
+export function HeaderContainer(props) {
   const { globalUsername } = useContext(UserContext);
   const { isSideBarShowing, setIsSideBarShowing } = useContext(SideContext);
   const { setTaskData, setAreTasksChanged } = props;
@@ -36,15 +36,25 @@ export function Header(props) {
     setTaskPopup(false);
   }
 
+  function showSideBar() {
+    if (isSideBarShowing) {
+      setIsSideBarShowing(false);
+    } else {
+      setIsSideBarShowing(true);
+    }
+  }
+
   return (
     <div className="header">
       <div className="header-container">
         <img
+          type="button"
           className="profile-pic "
           src={profile}
           height="150px"
           width="150x"
           object-fit="cover"
+          onClick={showSideBar}
         />
         <h1>
           Welcome {name}
