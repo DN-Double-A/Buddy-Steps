@@ -11,6 +11,7 @@ export function Header(props) {
   //& boolean state that controls 'taskPopup' pop up
   const [taskPopup, setTaskPopup] = useState(false);
   const [profile, setProfilePic] = useState('');
+  const [name, setName] = useState('')
 
   useEffect(() => {
     const getData = async () => {
@@ -18,6 +19,7 @@ export function Header(props) {
         const res = await fetch(`/api/user/?username=${globalUsername}`);
         const data = await res.json();
         setProfilePic(data.profilepic);
+        setName(data.name)
       } catch (err) {
         console.log(err);
       }
@@ -38,7 +40,7 @@ export function Header(props) {
     <div className="header">
       <div className="header-container">
         <img src={profile} height="150px" width="150x" object-fit="cover" />
-        <h1>{globalUsername.toUpperCase()} TASKS</h1>
+        <h1>Welcome {name}<br/>Here are your Current Tasks: </h1>
         <img
           src={addIcon}
           type="button"
