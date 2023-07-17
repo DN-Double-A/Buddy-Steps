@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   margin: 80px auto;
-  width: 50%;
+  max-width: 500px;
   padding: 20px;
   background-color: rgba(64, 71, 87, 0.481);
   border-radius: 20px;
@@ -31,21 +31,37 @@
   a {
     margin-right: 22px;
   }
+  animation: loadin 2s 
 }
 
-h1 {
-  margin: 10px auto 0;
+@keyframes loadin{
+  from{
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to{
+opacity:1;
+transform:translateX(0)
+  }
 }
 
+h3 {
+  // margin-top: 20px;
+}
+#userdirect{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 a h3 {
-  text-align: center;
+  // text-align: center;
+  // text-decoration: underline;
   width: 100%;
-  padding: 8px;
+  // padding: 8px;
   color: rgba(127, 212, 255, 0.733);
-  border: solid 3px rgba(127, 212, 255, 0.733);
-  border-radius: 32px;
+  // border: solid 3px rgba(127, 212, 255, 0.733);
+  // border-radius: 32px;
 }
-
+}
 #logincreate {
   width: 100%;
   display: flex;
@@ -55,7 +71,7 @@ a h3 {
     margin-bottom: 4px;
   }
   hr {
-    margin: 24px auto 20px;
+    // margin: 24px auto 20px;
     width: 80%;
   }
 }
@@ -89,11 +105,17 @@ a h3 {
 
 #allbuttons:hover {
   cursor: pointer;
-  transform: translate(1px, 1px);
+  transform: translate(1px, 1px) ;
+  color: white;
+}
+.allinputfields::placeholder {
+  text-align: center;
 }
 
 #gobackbutton {
-  text-decoration: none;
-  color: rgb(246, 247, 249);
+  text-align: center;
+  margin-left:10px;
+  text-decoration: underline;
+  color: rgba(127, 212, 255, 0.733);
   font-weight: bolder;
 }

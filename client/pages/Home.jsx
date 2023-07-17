@@ -10,12 +10,12 @@ export function Home(props) {
     const [taskData, setTaskData] = useState([])
 
     // Creating boolean to notify when the TaskBoard should be refreshed
-    const [isNewTaskAdded, setIsNewTaskAdded] = useState(false)
+    const [areTasksChanged, setAreTasksChanged] = useState(false)
 
     return (
         <div>
-            <Header taskData={taskData} setTaskData={setTaskData} setIsNewTaskAdded={setIsNewTaskAdded}/>
-            <TaskBoard taskData={taskData} setTaskData={setTaskData} setIsNewTaskAdded={setIsNewTaskAdded} isNewTaskAdded={isNewTaskAdded}/>
+            <Header taskData={taskData} setTaskData={setTaskData} setAreTasksChanged={setAreTasksChanged}/>
+            <TaskBoard taskData={taskData} setTaskData={setTaskData} setAreTasksChanged={setAreTasksChanged} areTasksChanged={areTasksChanged}/>
         </div>
     )
 }
