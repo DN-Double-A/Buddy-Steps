@@ -45,8 +45,8 @@ export function HeaderContainer(props) {
   }
 
   return (
-    <div className="header">
-      <div className="header-container">
+    <div className="header-container">
+      <div className="header-contents">
         <img
           type="button"
           className="profile-pic "

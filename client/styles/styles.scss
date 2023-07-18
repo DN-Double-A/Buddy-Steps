@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
 }
-
 body {
   height: 100%;
   margin: 0;
@@ -13,13 +12,14 @@ body {
     rgb(89, 132, 167),
     rgb(46, 87, 120),
     rgb(47, 54, 71)
-  );
-  color: rgba(246, 247, 249, 0.945);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    );
+    color: rgba(246, 247, 249, 0.945);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.header {
+  }
+  
+  //^Header related elements contained in Body
+  .header-container {
   background: linear-gradient(
     to bottom right,
     rgb(79, 95, 131),
@@ -64,22 +64,25 @@ body {
     transform: scale(1.1) rotate(180deg);
     transition: 0.5s ease-out;
   }
+
+  .header-contents {
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.header-container {
-  width: 100%;
-  margin: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
+//^ Container for window under the header containing sidebar and main table
 .sidebar-taskboard-container {
   height: 100%;
   display: flex;
   overflow: hidden;
 }
 
+//^ Sidebar container
 .main-side-container {
   display: flex;
   min-width: 128px;
@@ -115,28 +118,27 @@ body {
     border: solid 3px;
     border-radius: 16px;
   }
-
-  .complete {
-    filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%)
-      saturate(420%) opacity(80%);
-    align-self: center;
+  
+   #complete-button {
+    filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%) saturate(420%) opacity(80%);
     max-width: 72px;
+    border: solid 3px;
     border-radius: 16px;
   }
+  //? Remove line 126 and uncomment below for a different hover effect on the complete/habits finished icon
+  // .complete-span {
+  //   margin: 20px;
+  //   display: flex;
+  //   border: solid 3px white;
+  //   max-height: 72px;
+  //   border-radius: 16px;
+  // }
 
-  .complete-span {
-    margin: 20px;
-    display: flex;
-    border: solid 3px white;
-    max-height: 72px;
-    border-radius: 16px;
-  }
-
-  .complete-span:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: 0.1s ease-out;
-  }
+  // .complete-span:hover {
+  //   cursor: pointer;
+  //   transform: scale(1.1);
+  //   transition: 0.1s ease-out;
+  // }
 
   #sign-out-button {
     filter: invert(0.04) sepia(100%) hue-rotate(180deg) brightness(300%)
@@ -151,28 +153,19 @@ body {
   max-width: 60px;
 }
 
+//^ Main table container/task-board where task/habbit cards are placed
 .task-board {
   height: 100%;
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   justify-items: center;
   animation: fly-in-right 3s;
   overflow-y: scroll;
 }
 
-#start-date,
-#end-date,
-#days-left {
-  margin: 4px;
-}
-
-hr {
-  width: 80%;
-  margin: 16px;
-}
-
+//^ Task/Habit Cards
 .task {
   border: 1px solid;
   display: flex;
@@ -181,10 +174,11 @@ hr {
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  margin: 24px;
+  margin: 24px auto;
   width: 40vw;
+  min-width: 300px;
   max-width: 450px;
-  max-height: 400px;
+  max-height: 450px;
   padding: 24px;
   border-radius: 14px;
   border: none;
@@ -197,11 +191,20 @@ hr {
   }
 }
 
-.task-name {
-  margin: 0;
-  justify-self: flex-start;
+//^ text in task cards
+#start-date,
+#end-date,
+#days-left {
+  margin: 4px;
 }
 
+//^ horizontal rule/line in task cards
+hr {
+  width: 80%;
+  margin: 16px;
+}
+
+//^ Pop-up Window *Container* after clicking New Task Icon (Top-Right corner) & Edit Button in Task Cards
 .new-task-popup,
 .edit-task-popup {
   position: fixed;
@@ -250,6 +253,7 @@ hr {
   }
 }
 
+//^ Pop-up Window *Contents* after clicking New Task Icon (Top-Right corner)
 .new-task-popup-inner {
   width: 40%;
   min-width: 280px;
@@ -301,6 +305,7 @@ hr {
   }
 }
 
+//^ Pop-up Window *Contents* after clicking Edit Button in Task Cards
 .edit-task-popup-inner {
   width: 40%;
   position: relative;
@@ -341,6 +346,7 @@ hr {
   background-color: rgb(0, 168, 162);
 }
 
+//^ Progress Bar that updates after pressing Update Progress Button
 .progress-bar {
   /* width of the progress bar */
   width: 80%;
@@ -361,17 +367,7 @@ hr {
 //   left: 0;
 // }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.edit-task-popup-inner input {
-  width: 200px;
-}
-
+//^ Animation for window changes
 @keyframes fly-in-top {
   from {
     transform: translateY(-360px);
