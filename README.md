@@ -2,6 +2,7 @@
 Take the buddy steps
 
 # React Front End Organization
+# READ ON VSCODE FOR BETTER READABILITY
 REACT Front End
 App.jsx
 globalUsername: context variable, passes username to all parts of the web app
