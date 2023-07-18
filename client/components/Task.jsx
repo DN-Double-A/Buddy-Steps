@@ -12,6 +12,7 @@ export function Task(props) {
   const [progressBarValue, setProgressBarValue] = useState(0);
   const { globalUsername } = useContext(UserContext);
 
+  //& Note: stretch feature we could not implement (updating progress bar)
   // //& Update progress bar on render, render every time progressBarValue changes
   // useEffect(() => {
   //   async function getData() {
@@ -39,6 +40,7 @@ export function Task(props) {
   //   getData()
   // }, [])
 
+  //& NOTE: could not implement full feature below
   //& increment progressBarValue
   //& get data from server then update data on server
   async function updateProgress() {

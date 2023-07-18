@@ -32,6 +32,7 @@ export function EditTask(props) {
     }
   }, [taskIndex]);
 
+  //& Auto updates form data when input box of form is filled in
   function handleChange(event) {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
