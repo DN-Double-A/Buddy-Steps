@@ -174,8 +174,9 @@ body {
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  margin: 24px;
+  margin: 24px auto;
   width: 40vw;
+  min-width: 300px;
   max-width: 450px;
   max-height: 450px;
   padding: 24px;
