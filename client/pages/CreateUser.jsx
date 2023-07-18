@@ -71,15 +71,10 @@ export function CreateUser() {
       ),
     },
     {
-      value:
-        `${kyle}`,
+      value: `${kyle}`,
       label: (
         <div>
-          <img
-            src = {kyle}
-            height="100px"
-            width="100px"
-          />
+          <img src={kyle} height="100px" width="100px" />
         </div>
       ),
     },
@@ -91,8 +86,8 @@ export function CreateUser() {
   };
 
   return (
-    <div id="createlogin">
-      <div id="logincreate">
+    <div id="login-container">
+      <div id="login-contents">
         <h1>Create an Account!</h1>
         <hr />
         <div className="input-container">

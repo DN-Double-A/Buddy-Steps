@@ -46,8 +46,8 @@ export function Login() {
     }
   };
   return (
-    <div id="createlogin">
-      <div id="logincreate">
+    <div id="login-container">
+      <div id="login-contents">
         <h1>Welcome to Buddy Step</h1>
         <hr />
         <h2>Sign in Below</h2>

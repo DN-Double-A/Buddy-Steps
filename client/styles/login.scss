@@ -2,8 +2,8 @@
   height: 100vh;
 }
 
-#createlogin {
-  min-width: 400px;
+#login-container {
+  min-width: 450px;
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -35,16 +35,6 @@
   animation: loadin 2s;
 }
 
-@keyframes loadin {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 #userdirect {
   display: flex;
@@ -60,7 +50,8 @@
     // border-radius: 32px;
   }
 }
-#logincreate {
+
+#login-contents {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -120,4 +111,15 @@
   text-decoration: underline;
   color: rgba(127, 212, 255, 0.733);
   font-weight: bolder;
+}
+
+@keyframes loadin {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
